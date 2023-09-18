@@ -94,6 +94,7 @@ jobs:
       - name: Publish package on NPM 📦
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm publish --access public
         env:
           GITHUB_USER: 'pallasCI <continuous.integration@pallas.uk>'
