@@ -1,6 +1,6 @@
 {
-  "name": "@pallassystems/website",
-  "version": "1.0.7",
+  "name": "@pallassystems/website-core",
+  "version": "0.0.1",
   "description": "Company Website",
   "homepage": "https://www.pallas.uk",
   "license": "UNLICENSED",
