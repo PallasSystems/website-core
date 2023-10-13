@@ -78,7 +78,7 @@
     "build": "npm run clean && npm run build:esm && npm run build:cjs && ./configs/build-types.sh && npm run css-concat && react-scripts build",
     "build:esm": "tsc -p ./configs/tsconfig.esm.json",
     "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
-    "test": "react-scripts test --coverage --ci --watchAll" ,
+    "test": "react-scripts test --coverage --ci" ,
     "eject": "react-scripts eject",
     "prepack": "npm run build",
     "postpublish": "gh-pages -d build -U ${GITHUB_USER}",
