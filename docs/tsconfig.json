@@ -31,7 +31,7 @@
       }
     ]
   },
-  "include": ["src"],
+  "include": ["src", "../src"],
   "exclude": [
     "build",
     "dist",
@@ -40,5 +40,8 @@
     "src/**/*.stories.tsx",
     "**/*.md",
     "**/rollup.config.js"
-  ]
+  ],
+  "paths": {
+    "@pallassystems/website-core/*": ["../src/*"]
+  }
 }
