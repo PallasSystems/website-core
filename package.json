@@ -4,9 +4,9 @@
   "description": "Company Website",
   "homepage": "https://www.pallas.uk",
   "license": "UNLICENSED",
-  "main": "dist/esm/components/index.js",
-  "module": "dist/esm/components/index.js",
-  "types": "dist/esm/types/components/index.d.ts",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/types/index.d.ts",
   "files": [
     "build/**/*",
     "dist/**/*",
@@ -115,15 +115,15 @@
     ".": {
       "import": {
         "types": "./dist/types/index.d.ts",
-        "default": "./dist/components/index.js"
+        "default": "./dist/index.js"
       },
       "require": {
         "types": "./dist/types/index.d.ts",
-        "default": "./dist/components/index.js"
+        "default": "./dist/index.js"
       },
       "default": {
         "types": "./dist/types/index.d.ts",
-        "default": "./dist/components/index.js"
+        "default": "./dist/index.js"
       }
     },
     "./dist/website.css": {

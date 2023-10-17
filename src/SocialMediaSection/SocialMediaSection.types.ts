@@ -9,10 +9,10 @@ import { SCMProperties } from '../SCMIcon/index';
  * @property {SCMProperties=} SocialMediaProperties.scm - Source Control Management information to go in the media bar,
  */
 export interface SocialMediaProperties {
-    headerText?: string;
-    facebook?: string;
-    instagram?: string;
-    twitter?: string;
-    linkedin?: string;
-    scm?: SCMProperties;
+  headerText?: string;
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  linkedin?: string;
+  scm?: SCMProperties;
 }

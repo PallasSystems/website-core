@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationMap": true,
-    "declarationDir": "./dist/esm/types",
+    "declarationDir": "./dist/types",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
@@ -31,7 +31,7 @@
       }
     ]
   },
-  "include": ["src/components", "src/pages"],
+  "include": ["src"],
   "exclude": [
     "build",
     "dist",

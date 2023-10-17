@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationMap": true,
-    "declarationDir": "./dist/esm/types",
+    "declarationDir": "./dist/types",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
@@ -31,7 +31,15 @@
       }
     ]
   },
-  "include": ["src/components"],
+  "include": [
+    "src/components",
+    "src/BannerNavBar",
+    "src/index.ts",
+    "src/Common",
+    "src/ContactSection",
+    "src/Footer",
+    "src/SCMIcon"
+  ],
   "exclude": [
     "build",
     "dist",
