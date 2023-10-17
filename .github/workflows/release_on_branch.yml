@@ -53,28 +53,34 @@ jobs:
       - name: Run NPM Install
         run: npm ci
 
+      - name: Run NPM Test
+        run: npm run test -- --coverage
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1.7.0
+        if: success() || failure() # run this step even if previous step failed
+        with:
+          name: JEST Tests # Name of the check run which will be created
+          path: junit.xml # Path to test results
+          reporter: jest-junit # Format of test results
+
       - name: Run NPM Build
         run: npm run build --if-present
 
-      - name: Run NPM Test
-        run: npm run test --if-present
+      - name: Save Code Linting Report JSON
+        run: npm run lint --if-present
         continue-on-error: true
 
-      - name: Save Code Linting Report JSON
-        run: npm run lint:report --if-present
-        continue-on-error: true
+      - name: ESLint Annotate from Report JSON
+        uses: ataylorme/eslint-annotate-action@2.2.0
+        with:
+          report-json: 'eslint_report.json'
 
       - name: Upload ESLint report
         uses: actions/upload-artifact@v2
         with:
           name: eslint_report.json
           path: ${GITHUB_WORKSPACE}/eslint_report.json
-
-      - name: Upload StyleLint report
-        uses: actions/upload-artifact@v2
-        with:
-          name: stylelint_report.txt
-          path: ${GITHUB_WORKSPACE}/stylelint_report.json
 
       # Automatic Scanner is enabled
       - name: SonarCloud Analysis
@@ -83,6 +89,13 @@ jobs:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Build docs website
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: |
+          cd docs
+          npm ci
+          npm run build --if-present
 
       - name: Publish package on NPM 📦
         if: ${{ contains(github.ref, 'refs/heads/release') }}
@@ -107,7 +120,7 @@ jobs:
         run: git push origin release/${{ env.BRANCH_NAME }}
 
       - name: Create pull request into main
-        uses: repo-sync/pull-request@v2
+        uses: repo-sync/pull-request@v2.12.1
         with:
           source_branch: release/${{ env.BRANCH_NAME }}
           destination_branch: 'main'

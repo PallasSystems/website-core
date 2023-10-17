@@ -1,4 +1,4 @@
-import { FooterProperties, NavbarProperty } from '../../components';
+import { FooterProperties, NavbarProperty } from '../../../../src/components';
 
 interface HomePageProperties {
   footerProps?: FooterProperties;

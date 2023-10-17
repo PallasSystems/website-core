@@ -1,15 +1,11 @@
 {
-  "name": "@pallassystems/website-core",
-  "version": "0.1.5",
+  "name": "@pallassystems/website-core-docs",
+  "version": "0.0.1",
   "description": "Company Website",
   "homepage": "https://www.pallas.uk",
   "license": "UNLICENSED",
-  "main": "dist/esm/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/types/index.d.ts",
   "files": [
     "build/**/*",
-    "dist/**/*",
     "src/**/*"
   ],
   "private": false,
@@ -79,18 +75,12 @@
   "scripts": {
     "start": "react-scripts start",
     "clean": "rm -rf ./build && rm -rf ./lib",
-    "css-concat": "cat ./src/css/bootstrap.solar.css >> ./dist/website.css && cat ./src/css/bootstrap.pallas.css >> ./dist/website.css",
-    "build": "npm run clean && tsc && npm run css-concat && react-scripts build",
+    "build": "npm run clean && tsc && react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "prepack": "npm run build",
-    "postpublish": "gh-pages -d docs/build -U ${GITHUB_USER}",
-    "storybook": "storybook dev -p 6006 -s public",
-    "build-storybook": "storybook build -s public",
     "analyse": "source-map-explorer 'build/static/js/*.js'",
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
-    "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
-    "lint": "npm run eslint && npm run stylelint"
+    "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json"
   },
   "repository": {
     "type": "git",
@@ -110,25 +100,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "default": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "./dist/website.css": {
-      "import": "./dist/website.css",
-      "require": "./dist/website.css"
-    }
   }
 }
