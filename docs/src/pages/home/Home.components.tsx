@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { BannerNavBar, Footer } from '../../components';
+import { BannerNavBar, Footer } from '../../../../src/components';
 
 // HomePage Properties
 import { HomePageProperties } from './Home.types';

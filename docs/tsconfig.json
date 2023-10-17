@@ -31,7 +31,7 @@
       }
     ]
   },
-  "include": ["src/components"],
+  "include": ["src/components", "src/pages"],
   "exclude": [
     "build",
     "dist",
