@@ -84,7 +84,7 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "prepack": "npm run build",
-    "postpublish": "gh-pages -d build -U ${GITHUB_USER}",
+    "postpublish": "gh-pages -d docs/build -U ${GITHUB_USER}",
     "storybook": "storybook dev -p 6006 -s public",
     "build-storybook": "storybook build -s public",
     "analyse": "source-map-explorer 'build/static/js/*.js'",
