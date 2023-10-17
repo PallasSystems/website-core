@@ -45,27 +45,27 @@ jobs:
       - name: Run NPM Test
         run: npm run test -- --coverage
 
-      - name: Run NPM Build
-        run: npm run build --if-present
-
       - name: Test Report
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@v1.7.0
         if: success() || failure() # run this step even if previous step failed
         with:
           name: JEST Tests # Name of the check run which will be created
           path: junit.xml # Path to test results
           reporter: jest-junit # Format of test results
 
+      - name: Run NPM Build
+        run: npm run build --if-present
+
       - name: Save Code Linting Report JSON
-        run: npm run lint:report --if-present
+        run: npm run lint --if-present
         continue-on-error: true
 
-      #      - name: ESLint Annotate from Report JSON
-      #        uses: ataylorme/eslint-annotate-action@1.2.0
-      #        with:
-      #          repo-token: ${{ secrets.SCM_TOKEN }}
-      #          report-json: "eslint_report.json"
-      #          only-pr-files: true
+      - name: ESLint Annotate from Report JSON
+        uses: ataylorme/eslint-annotate-action@2.2.0
+        with:
+          repo-token: ${{ secrets.SCM_TOKEN }}
+          report-json: 'eslint_report.json'
+          only-pr-files: true
 
       - name: Upload ESLint report
         uses: actions/upload-artifact@v2
