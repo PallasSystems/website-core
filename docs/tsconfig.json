@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "./dist/types",
@@ -31,17 +32,14 @@
       }
     ]
   },
-  "include": ["src", "../src"],
+  "include": ["src"],
   "exclude": [
-    "build",
-    "dist",
-    "node_modules",
+    "/build",
+    "/dist",
+    "/node_modules",
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx",
     "**/*.md",
     "**/rollup.config.js"
-  ],
-  "paths": {
-    "@pallassystems/website-core/*": ["../src/*"]
-  }
+  ]
 }

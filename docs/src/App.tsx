@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, MissingPage } from './pages';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@pallassystems/website-core/dist/website.css';
+import './website.css';
 
 function App() {
   return (

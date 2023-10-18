@@ -10,6 +10,7 @@
   ],
   "private": false,
   "dependencies": {
+    "@pallassystems/website-core": "0.1.4",
     "bootstrap": ">=5.3.0",
     "react": ">=18.2.0",
     "react-bootstrap": ">=2.0.0",
@@ -73,9 +74,10 @@
     "webpack": ">=5.75.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run clean && tsc && npm run css-concat && react-scripts start",
     "clean": "rm -rf ./build && rm -rf ./lib",
-    "build": "npm run clean && tsc && react-scripts build",
+    "css-concat": "cat ../src/css/bootstrap.solar.css >> ./src/website.css && cat ../src/css/bootstrap.pallas.css >> ./src/website.css",
+    "build": "npm run clean && tsc && npm run css-concat && react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src"
