@@ -1,14 +1,11 @@
 import React from 'react';
-
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import { StoryFn } from '@storybook/react';
-
 import { BannerNavBar } from './BannerNavBar.components';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 export default {
   component: BannerNavBar,
   decorators: [
-    (Story: React.FC) => (
+    (Story) => (
       <HashRouter>
         <Routes>
           <Route path={''} element={<Story />} />
@@ -21,7 +18,7 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof BannerNavBar> = (args) => <BannerNavBar {...args} />;
+const Template = (args) => <BannerNavBar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -29,7 +26,7 @@ Default.args = {};
 export const Complete = Template.bind({});
 Complete.args = {
   brandName: 'Pallas Systems',
-  brandImg: { id: 'logo', src: './images/logos/logo.svg' },
+  brandImg: { src: './images/logos/logo.svg' },
   items: [
     { text: 'Home', path: '' },
     { text: 'Services', path: '/services' },
