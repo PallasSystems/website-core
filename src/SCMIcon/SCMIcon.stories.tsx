@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { StoryFn } from '@storybook/react';
 import { SCMIcon } from './SCMIcon.components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -17,8 +17,8 @@ export default {
         defaultValue: { summary: '' },
       },
       control: {
-        type: 'text'
-      }
+        type: 'text',
+      },
     },
     project: {
       name: 'Project/Group',
@@ -30,8 +30,8 @@ export default {
         defaultValue: { summary: '' },
       },
       control: {
-        type: 'text'
-      }
+        type: 'text',
+      },
     },
     repository: {
       name: 'Repository',
@@ -43,8 +43,8 @@ export default {
         defaultValue: { summary: '' },
       },
       control: {
-        type: 'text'
-      }
+        type: 'text',
+      },
     },
     type: {
       name: 'SCM Name',
@@ -56,27 +56,26 @@ export default {
         defaultValue: { summary: 'Git' },
       },
       control: {
-        type: 'text'
-      }
-    }
+        type: 'text',
+      },
+    },
   },
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <SCMIcon {...args} />;
-
+const Template: StoryFn<typeof SCMIcon> = (args) => <SCMIcon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    project: "PallasSystems",
-    repository: "react-common",
-    type: "GitHub"
+  project: 'PallasSystems',
+  repository: 'react-common',
+  type: 'GitHub',
 };
 
 export const Complete = Template.bind({});
 Complete.args = {
-    endpoint: "https://localhost:8090/",
-    project: "test",
-    repository: "repo",
-    type: "Git"
+  endpoint: 'https://localhost:8090/',
+  project: 'test',
+  repository: 'repo',
+  type: 'Git',
 };

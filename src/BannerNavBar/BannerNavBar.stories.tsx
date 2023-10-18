@@ -1,6 +1,9 @@
 import React from 'react';
-import { BannerNavBar } from './BannerNavBar.components';
+
 import { HashRouter, Route, Routes } from 'react-router-dom';
+import { StoryFn } from '@storybook/react';
+
+import { BannerNavBar } from './BannerNavBar.components';
 
 export default {
   component: BannerNavBar,
@@ -18,7 +21,7 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <BannerNavBar {...args} />;
+const Template: StoryFn<typeof BannerNavBar> = (args) => <BannerNavBar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
