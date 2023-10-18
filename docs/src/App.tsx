@@ -4,8 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, MissingPage } from './pages';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../src/css/bootstrap.solar.css';
-import '../../src/css/bootstrap.pallas.css';
+import './website.css';
 
 function App() {
   return (

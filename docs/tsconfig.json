@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "./dist/types",
@@ -33,9 +34,9 @@
   },
   "include": ["src"],
   "exclude": [
-    "build",
-    "dist",
-    "node_modules",
+    "/build",
+    "/dist",
+    "/node_modules",
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx",
     "**/*.md",

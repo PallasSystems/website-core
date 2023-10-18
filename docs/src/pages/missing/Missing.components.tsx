@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import { BannerNavBar, Footer, PallasSVG } from '../../../../src/components';
+import { BannerNavBar, Footer, PallasSVG } from '@pallassystems/website-core';
 
 const MissingPage: FC = () => {
   return (

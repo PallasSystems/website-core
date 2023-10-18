@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { BannerNavBar, Footer } from '../../../../src/components';
+import { BannerNavBar, Footer } from '@pallassystems/website-core';
 
 // HomePage Properties
 import { HomePageProperties } from './Home.types';
