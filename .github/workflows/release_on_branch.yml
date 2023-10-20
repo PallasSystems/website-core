@@ -51,6 +51,7 @@ jobs:
         with:
           version: ${{ env.BRANCH_NAME }}
           git-tag-version: 'true'
+        continue-on-error: true
 
       - name: Run NPM Install
         run: npm ci
