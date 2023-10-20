@@ -45,10 +45,12 @@ jobs:
         shell: bash
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/release-*//')" >> $GITHUB_ENV
 
-      - name: Set Project Version
+      - name: 'change version'
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: 'npm version ${{ env.BRANCH_NAME }} -m "[NPM Release] Performing release: ${{ env.BRANCH_NAME }}"'
-        continue-on-error: true
+        uses: reedyuk/npm-version@1.2.2
+        with:
+          version: ${{ env.BRANCH_NAME }}
+          git-tag-version: 'true'
 
       - name: Run NPM Install
         run: npm ci
@@ -89,13 +91,6 @@ jobs:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      - name: Build docs website
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: |
-          cd docs
-          npm ci
-          npm run build --if-present
 
       - name: Publish package on NPM 📦
         if: ${{ contains(github.ref, 'refs/heads/release') }}
