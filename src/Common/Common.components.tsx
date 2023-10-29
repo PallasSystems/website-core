@@ -1,8 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, SVGProps } from 'react';
 
-import { ImageProperty } from './Common.types';
-
-export const PallasSVG: FC<ImageProperty> = ({ id, className, height, width }) => {
+export const PallasSVG: FC<SVGProps<SVGElement>> = ({ id, className, height, width }) => {
   return (
     <svg
       version='1.1'
