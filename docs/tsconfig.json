@@ -21,7 +21,7 @@
     "noFallthroughCasesInSwitch": true
   },
 
-  "include": ["src", "../src", ".../dist"],
+  "include": ["src"],
   "exclude": [
     "build",
     "dist",
