@@ -84,3 +84,10 @@ jobs:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Build docs 📦
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: |
+          cd docs
+          npm ci
+          npm run build
