@@ -25,11 +25,18 @@
     "web-vitals": ">=3.3.2"
   },
   "peerDependencies": {
-    "@types/react": ">=18.0.0",
     "react": ">=18.2.0",
     "react-bootstrap": ">=2.0.0",
     "react-dom": ">=18.2.0",
     "typescript": ">=4.9.5"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": false
+    },
+    "@types/react-router-bootstrap": {
+      "optional": false
+    }
   },
   "overrides": {
     "postcss": ">=8.4.31",
@@ -79,7 +86,8 @@
     "analyse": "source-map-explorer 'build/static/js/*.js'",
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
     "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
-    "lint": "npm run eslint && npm run stylelint"
+    "lint": "npm run eslint && npm run stylelint",
+    "postpublish": "gh-pages -d docs/dist -U ${GITHUB_USER}"
   },
   "repository": {
     "type": "git",
