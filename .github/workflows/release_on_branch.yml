@@ -108,6 +108,7 @@ jobs:
           npm publish --access public
         env:
           GITHUB_USER: 'pallasCI <continuous.integration@pallas.uk>'
+          GITHUB_REPO_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GITHUB_REPOSITORY: 'website-core'
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
