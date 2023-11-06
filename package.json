@@ -87,7 +87,7 @@
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
     "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
     "lint": "npm run eslint && npm run stylelint",
-    "postpublish": "gh-pages -d docs/dist --user ${GITHUB_REPO_USER}"
+    "postpublish": "gh-pages -d docs/dist"
   },
   "repository": {
     "type": "git",
