@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { ImageProperty } from '../Common/index';
 
 export interface NavbarLinkProperty {
@@ -6,7 +7,12 @@ export interface NavbarLinkProperty {
 }
 
 export interface NavbarProperty {
-  brandName?: string;
-  brandImg?: ImageProperty;
+  brand?: NavbarBrand;
   items?: NavbarLinkProperty[];
+}
+
+export interface NavbarBrand {
+  name: string;
+  imgFn?: (props?: ImageProperty) => ReactNode;
+  imgProps?: ImageProperty;
 }

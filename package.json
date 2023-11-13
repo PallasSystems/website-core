@@ -78,7 +78,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist ./coverage eslint_report.json stylelint_report.json junit.xml",
-    "css-concat": "cat ./src/css/bootstrap.solar.css >> ./dist/website.css && cat ./src/css/bootstrap.pallas.css >> ./dist/website.css",
+    "css-concat": "cat ./src/css/base.css >> ./dist/website.css && ./src/css/bootstrap.solar.css >> ./dist/website.css && cat ./src/css/bootstrap.pallas.css >> ./dist/website.css",
     "build": "npm run clean && tsc && npm run css-concat",
     "test": "jest",
     "storybook": "storybook dev -p 6006 -s public",
