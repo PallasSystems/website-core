@@ -4,6 +4,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { StoryFn } from '@storybook/react';
 
 import { BannerNavBar } from './BannerNavBar.components';
+import { PallasSVG } from '../Common';
 
 export default {
   component: BannerNavBar,
@@ -28,8 +29,18 @@ Default.args = {};
 
 export const Complete = Template.bind({});
 Complete.args = {
-  brandName: 'Pallas Systems',
-  brandImg: { src: './images/logos/logo.svg' },
+  brand: {
+    name: 'Pallas Systems',
+    imgFn: (
+      <PallasSVG
+        id='BannerNavBar.Brand.Link.Logo.SVG'
+        alt='Pallas Systems Logo'
+        height='3.5rem'
+        width='4rem'
+        className='d-inline-block'
+      />
+    ),
+  },
   items: [
     { text: 'Home', path: '' },
     { text: 'Services', path: '/services' },
@@ -39,7 +50,9 @@ Complete.args = {
 
 export const SpacedWords = Template.bind({});
 SpacedWords.args = {
-  brandName: 'Pallas Systems',
+  brand: {
+    name: 'Pallas Systems',
+  },
   items: [
     { text: 'Getting Started', path: '' },
     { text: 'User Guide', path: '/services' },
@@ -49,7 +62,9 @@ SpacedWords.args = {
 
 export const LongWords = Template.bind({});
 LongWords.args = {
-  brandName: 'Pallas Systems',
+  brand: {
+    name: 'Pallas Systems',
+  },
   items: [
     { text: 'GettingStartedWithTomAndDick', path: '' },
     { text: 'User', path: '/services' },

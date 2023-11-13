@@ -6,6 +6,8 @@ import { BannerNavBar, Footer } from '@pallassystems/website-core';
 import { HomePageProperties } from './home.types';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+// Package properties
+import projectProps from '../../../../package.json';
 
 const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
   return (
@@ -16,7 +18,7 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
           <h1>Website Core Components</h1>
         </Row>
         <Row className={'my-2'}>
-          <h5>Components to enable the creation of Pallas Systems themed websites</h5>
+          <h5>{projectProps.description}</h5>
         </Row>
         <Row className={'my-2'}>
           <Col xs={3}></Col>
@@ -38,7 +40,7 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
           <Col xs={3}></Col>
         </Row>
         <Row className={'my-2'}>
-          <p>Current Version: 0.1.6</p>
+          <p>Current Version: {projectProps.version}</p>
         </Row>
       </Container>
       <Footer {...footerProps} />
