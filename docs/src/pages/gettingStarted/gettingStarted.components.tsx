@@ -1,10 +1,15 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
+import Prism from 'prismjs';
 
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
 
 // Getting Started Page Properties
 import { GettingStartedPageProperties } from './gettingStarted.types';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Tabs, Tab } from 'react-bootstrap';
+
+// Package properties
+import projectProps from '../../../../package.json';
+import 'prismjs/themes/prism.min.css';
 
 const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, navBarProps }) => {
   return (
@@ -24,6 +29,16 @@ const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, nav
 };
 
 const GettingStartedInstallComponent: FC = () => {
+  const dependencies = Object.keys(projectProps.peerDependencies);
+  let depString = '';
+  dependencies.forEach((value) => {
+    depString += ' ' + value;
+  });
+
+  useEffect(() => {
+    Prism.highlightAll();
+  });
+
   return (
     <Container>
       <Row>
@@ -32,62 +47,51 @@ const GettingStartedInstallComponent: FC = () => {
       <Row>
         <p>
           The best way to use Pallas Systems Core Website Components is via the npm package which you can install with
-          npm, pnpm or yarn.
-        </p>
-        <p>
-          If you are already using React Bootstrap, you probably already have most of these peer dependencies installed.
+          bun, npm, pnpm or yarn. If you are already using React Bootstrap, you probably already have most of these peer
+          dependencies installed.
         </p>
       </Row>
       <Row className={'px-3'}>
-        <ol>
-          <li>bootstrap (v15)</li>
-          <li>react (v18)</li>
-          <li>react-dom (v18)</li>
-          <li>react-router (v6)</li>
-        </ol>
-      </Row>
-      <Row className={'my-3'}>
-        <h2>Quick Install</h2>
-      </Row>
-      <Row className={'my-3'}>
-        <h4>NPM</h4>
+        <ul>
+          {dependencies.map(function (value) {
+            return <li>{value}</li>;
+          })}
+        </ul>
       </Row>
       <Row>
-        <code>npm install @pallassystems/website-core</code>
-      </Row>
-      <Row className={'my-3'}>
-        <h4>PNPM</h4>
+        <h1>Quick Install</h1>
       </Row>
       <Row>
-        <code>pnpm add @pallassystems/website-core</code>
-      </Row>
-      <Row className={'my-3'}>
-        <h4>Yarn</h4>
-      </Row>
-      <Row>
-        <code>yarn add @pallassystems/website-core</code>{' '}
-      </Row>
-
-      <Row className={'my-3'}>
-        <h2>Install With Required Peer Dependencies</h2>
-      </Row>
-      <Row className={'my-3'}>
-        <h4>NPM</h4>
-      </Row>
-      <Row>
-        <code>npm install @pallassystems/website-core bootstrap react react-dom react-router react-router</code>
-      </Row>
-      <Row className={'my-3'}>
-        <h4>PNPM</h4>
-      </Row>
-      <Row>
-        <code>pnpm add @pallassystems/website-core bootstrap react react-dom react-router react-router</code>
-      </Row>
-      <Row className={'my-3'}>
-        <h4>Yarn</h4>
-      </Row>
-      <Row>
-        <code>yarn add @pallassystems/website-core bootstrap react react-dom react-router react-router</code>{' '}
+        <Tabs defaultActiveKey='npm' id='quick-install-commands' className='mb-3'>
+          <Tab eventKey='bun' title='Bun'>
+            <pre className={'language-bash'}>
+              <code>
+                bun add {projectProps.name} {depString.trim()}
+              </code>
+            </pre>
+          </Tab>
+          <Tab eventKey='npm' title='NPM'>
+            <pre className={'language-bash'}>
+              <code>
+                npm install --save {projectProps.name} {depString.trim()}
+              </code>
+            </pre>
+          </Tab>
+          <Tab eventKey='pnpm' title='PNPM'>
+            <pre className={'language-bash'}>
+              <code>
+                pnpm add {projectProps.name} {depString.trim()}
+              </code>
+            </pre>
+          </Tab>
+          <Tab eventKey='yarn' title='Yarn'>
+            <pre className={'language-bash'}>
+              <code>
+                yarn add {projectProps.name} {depString.trim()}
+              </code>
+            </pre>
+          </Tab>
+        </Tabs>
       </Row>
     </Container>
   );
