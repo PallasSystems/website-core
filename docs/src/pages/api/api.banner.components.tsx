@@ -94,6 +94,14 @@ const ApiNavbarBannerPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }
           <RBTable columns={columns} data={navbarData} />
         </Row>
         <Row>
+          <h2>Example</h2>
+        </Row>
+        <Row>
+          <pre className={'language-javascript'}>
+            <code>{}</code>
+          </pre>
+        </Row>
+        <Row>
           <h1>NavbarBrand Options</h1>
         </Row>
         <Row>Below we have provided the options you can supply to the BannerNavBar object.</Row>

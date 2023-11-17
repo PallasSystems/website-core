@@ -37,6 +37,12 @@ const SimpleBannerExamplesComponent: FC = () => {
           <code>{GetSimpleBannerExample()}</code>
         </pre>
       </Row>
+      <Row>
+        <h5>Demonstration</h5>
+      </Row>
+      <Row>
+        <BannerNavBar />
+      </Row>
     </Container>
   );
 };
