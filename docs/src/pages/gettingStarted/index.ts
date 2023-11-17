@@ -1,2 +1,4 @@
 export type { GettingStartedPageProperties } from './gettingStarted.types';
-export { GettingStartedPage, GettingStartedInstallPage, GettingStartedUsagePage } from './gettingStarted.components';
+export { GettingStartedPage } from './gettingStarted.components';
+export { GettingStartedInstallPage } from './gettingStarted.install.components';
+export { GettingStartedUsagePage } from './gettingStarted.usage.components';

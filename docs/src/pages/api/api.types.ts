@@ -5,4 +5,11 @@ type ApiPageProperties = {
   navBarProps?: NavbarProperty;
 };
 
-export type { ApiPageProperties };
+type ApiTableEntry = {
+  field: String;
+  type: String;
+  required: String;
+  description: string;
+};
+
+export type { ApiPageProperties, ApiTableEntry };
