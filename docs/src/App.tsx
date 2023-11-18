@@ -1,7 +1,9 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import {
-  ApiNavbarBannerPage,
+  ApiNavbarPropertyPage,
+  ApiNavbarBrandPage,
+  ApiNavbarLinkPropertyPage,
   ApiPage,
   ExamplesPage,
   GettingStartedInstallPage,
@@ -18,7 +20,9 @@ function App() {
       <Routes>
         <Route path={''} element={<HomePage {...PageData} />} />
         <Route path={'/api'} element={<ApiPage {...PageData} />} />
-        <Route path={'/api/navbarbanner'} element={<ApiNavbarBannerPage {...PageData} />} />
+        <Route path={'/api/navbarproperty'} element={<ApiNavbarPropertyPage {...PageData} />} />
+        <Route path={'/api/navbarbrand'} element={<ApiNavbarBrandPage {...PageData} />} />
+        <Route path={'/api/navbarlinkproperty'} element={<ApiNavbarLinkPropertyPage {...PageData} />} />
         <Route path={'/examples'} element={<ExamplesPage {...PageData} />} />
         <Route path={'/examples/simplebanner'} element={<SimpleBannerExamplesPage {...PageData} />} />
         <Route path={'/gettingstarted'} element={<GettingStartedPage {...PageData} />} />

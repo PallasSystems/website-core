@@ -6,6 +6,11 @@ import { BannerNavBar, Footer } from '@pallassystems/website-core';
 import { ApiPageProperties } from './api.types';
 import { Container, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { ApiNavbarPropertyPage } from '.';
+
+const ApiBannerNavBarLinks = [
+  { link: '/api/navbarproperty', text: 'Navbar Property', component: <ApiNavbarPropertyPage /> },
+];
 
 const ApiPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   return (
@@ -16,13 +21,23 @@ const ApiPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
           <h1>API Reference</h1>
         </Row>
         <Row className={'my-2'}>
-          <h2>Properties</h2>
+          <h2>BannerNavBar Properties</h2>
         </Row>
         <Row className={'mx-3'}>
           <ul>
             <li>
-              <LinkContainer to='/api/navbarbanner'>
-                <a> Navbar Banner </a>
+              <LinkContainer to='/api/navbarproperty'>
+                <a> Navbar Property </a>
+              </LinkContainer>
+            </li>
+            <li>
+              <LinkContainer to='/api/navbarbrand'>
+                <a> Navbar Brand </a>
+              </LinkContainer>
+            </li>
+            <li>
+              <LinkContainer to='/api/navbarlinkproperty'>
+                <a>NavbarLinkProperty</a>
               </LinkContainer>
             </li>
           </ul>

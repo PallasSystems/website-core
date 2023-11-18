@@ -13,7 +13,7 @@ const SimpleBannerExamplesPage: FC<ExamplesPageProperties> = ({ footerProps, nav
   return (
     <main role={'main'} className={'flex-shrink-0'}>
       <BannerNavBar {...navBarProps} />
-      <Container id='intro' className={'content text-center my-5'}>
+      <Container id='intro' className={'content my-5'}>
         <SimpleBannerExamplesComponent />
       </Container>
       <Footer {...footerProps} />
@@ -41,10 +41,17 @@ const SimpleBannerExamplesComponent: FC = () => {
         <h5>Demonstration</h5>
       </Row>
       <Row>
-        <BannerNavBar />
+        <BannerNavBar {...SimpleBannerExamplesData} />
       </Row>
     </Container>
   );
+};
+
+const SimpleBannerExamplesData: BannerNavBar = {
+  brand: {
+    name: 'example project',
+  },
+  items: [{ text: 'menu1', path: '/path' }],
 };
 
 const GetSimpleBannerExample = (): string => {
@@ -59,4 +66,4 @@ const GetSimpleBannerExample = (): string => {
   );
 };
 
-export { SimpleBannerExamplesPage, SimpleBannerExamplesComponent };
+export { SimpleBannerExamplesPage, SimpleBannerExamplesComponent, SimpleBannerExamplesData };
