@@ -2,15 +2,15 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import {
   ApiHeadPage,
+  ApiBannerNavBarPageData,
   ExamplesHeadPage,
+  ExamplePageData,
   GettingStartedInstallPage,
   GettingStartedPage,
   GettingStartedUsagePage,
   HomePage,
-  ApiBannerNavBarPageData,
 } from './pages';
 import { PageData } from './App.data';
-import { ExamplePageData } from './pages/examples/example.data';
 
 function App() {
   return (

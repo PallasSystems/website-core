@@ -12,6 +12,7 @@ export type { ApiPage, ApiPageProperties, ApiTableEntry } from './api';
 
 export {
   ExamplesHeadPage,
+  ExamplePageData,
   SimpleBannerExamplesPage,
   SimpleBannerExamplesComponent,
   SimpleBannerExamplesData,
