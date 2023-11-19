@@ -1,8 +1,10 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import {
-  ApiPage,
-  ExamplesPage,
+  ApiHeadPage,
+  ApiBannerNavBarPageData,
+  ExamplesHeadPage,
+  ExamplePageData,
   GettingStartedInstallPage,
   GettingStartedPage,
   GettingStartedUsagePage,
@@ -15,11 +17,18 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path={''} element={<HomePage {...PageData} />} />
-        <Route path={'/api'} element={<ApiPage {...PageData} />} />
-        <Route path={'/examples'} element={<ExamplesPage {...PageData} />} />
+        <Route path={'/api'} element={<ApiHeadPage {...PageData} />} />
+        {ApiBannerNavBarPageData.map((value) => {
+          return <Route path={value.link} element={value.page(PageData)} />;
+        })}
+        <Route path={'/examples'} element={<ExamplesHeadPage {...PageData} />} />
+        {ExamplePageData.map((value) => {
+          return <Route path={value.link} element={value.page(PageData)} />;
+        })}
         <Route path={'/gettingstarted'} element={<GettingStartedPage {...PageData} />} />
         <Route path={'/gettingstarted/install'} element={<GettingStartedInstallPage {...PageData} />} />
-        <Route path={'/gettingstarted/install'} element={<GettingStartedUsagePage {...PageData} />} />
+        <Route path={'/gettingstarted/usage'} element={<GettingStartedUsagePage {...PageData} />} />
+        /examples/simplebanner
       </Routes>
     </HashRouter>
   );
