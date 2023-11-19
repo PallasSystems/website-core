@@ -20,24 +20,28 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
         <Row className={'my-2'}>
           <h5>{projectProps.description}</h5>
         </Row>
-        <Row className={'my-2'}>
-          <Col xs={3}></Col>
+        <Row>
           <Col>
-            <LinkContainer to='/gettingStarted'>
-              <Button variant='dark'>Getting Started</Button>
-            </LinkContainer>
+            <div className={'d-grid gap-2 my-2'}>
+              <LinkContainer to='/gettingStarted'>
+                <Button variant='dark'>Getting Started</Button>
+              </LinkContainer>
+            </div>
           </Col>
           <Col>
-            <LinkContainer to='/api'>
-              <Button variant='dark'>API</Button>
-            </LinkContainer>
+            <div className={'d-grid gap-2 my-2'}>
+              <LinkContainer to='/api'>
+                <Button variant='dark'>API</Button>
+              </LinkContainer>
+            </div>
           </Col>
           <Col>
-            <LinkContainer to='/examples'>
-              <Button variant='dark'>Examples</Button>
-            </LinkContainer>
+            <div className={'d-grid gap-2 my-2'}>
+              <LinkContainer to='/examples'>
+                <Button variant='dark'>Examples</Button>
+              </LinkContainer>
+            </div>
           </Col>
-          <Col xs={3}></Col>
         </Row>
         <Row className={'my-2'}>
           <p>Current Version: {projectProps.version}</p>

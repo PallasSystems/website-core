@@ -8,6 +8,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 import { NavbarProperty, NavbarLinkProperty, NavbarBrand } from './BannerNavBar.types';
 import { ImageProperty } from '../Common';
+import { TextWrap } from 'react-bootstrap-icons';
 
 const BannerNavBar: FC<NavbarProperty> = ({ brand, items }) => {
   const links = undefined === items || null == items ? [] : items;
@@ -35,15 +36,16 @@ const BannerNavBar: FC<NavbarProperty> = ({ brand, items }) => {
               {brand.imgFn ? (
                 <LinkContainer to='/'>
                   <Navbar.Brand id={'BannerNavBar.Brand.Link.Logo'} className='text-light'>
-                    {GenerateBrandLogo(brand)}
+                    {GenerateBrandLogo(brand)} {brand.name}
                   </Navbar.Brand>
                 </LinkContainer>
-              ) : null}
-              <LinkContainer to='/'>
-                <Navbar.Brand id={'BannerNavBar.Brand.Link.Logo.text'} className='text-light'>
-                  {brand.name}
-                </Navbar.Brand>
-              </LinkContainer>{' '}
+              ) : (
+                <LinkContainer to='/'>
+                  <Navbar.Brand id={'BannerNavBar.Brand.Link.Logo.text'} className='text-light'>
+                    {brand.name}
+                  </Navbar.Brand>
+                </LinkContainer>
+              )}
             </>
           ) : null}
           <Navbar.Toggle id='responsive-navbar-btn' aria-controls='responsive-navbar-nav' />
