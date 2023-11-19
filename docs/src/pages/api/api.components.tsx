@@ -1,18 +1,13 @@
 import { FC } from 'react';
-
+import { Container, Row } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
 
 // Getting Started Page Properties
 import { ApiPageProperties } from './api.types';
-import { Container, Row } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import { ApiNavbarPropertyPage } from '.';
+import { ApiBannerNavBarPageData } from './BannerNavBar/BannerNavBar.data';
 
-const ApiBannerNavBarLinks = [
-  { link: '/api/navbarproperty', text: 'Navbar Property', component: <ApiNavbarPropertyPage /> },
-];
-
-const ApiPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
+const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   return (
     <main role={'main'} className={'flex-shrink-0'}>
       <BannerNavBar {...navBarProps} />
@@ -25,21 +20,15 @@ const ApiPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
         </Row>
         <Row className={'mx-3'}>
           <ul>
-            <li>
-              <LinkContainer to='/api/navbarproperty'>
-                <a> Navbar Property </a>
-              </LinkContainer>
-            </li>
-            <li>
-              <LinkContainer to='/api/navbarbrand'>
-                <a> Navbar Brand </a>
-              </LinkContainer>
-            </li>
-            <li>
-              <LinkContainer to='/api/navbarlinkproperty'>
-                <a>NavbarLinkProperty</a>
-              </LinkContainer>
-            </li>
+            {ApiBannerNavBarPageData.map((value) => {
+              return (
+                <li>
+                  <LinkContainer to={value.link}>
+                    <a href={value.text}>{value.text}</a>
+                  </LinkContainer>
+                </li>
+              );
+            })}
           </ul>
         </Row>
       </Container>
@@ -48,4 +37,4 @@ const ApiPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   );
 };
 
-export { ApiPage };
+export { ApiHeadPage };

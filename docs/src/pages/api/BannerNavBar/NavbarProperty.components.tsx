@@ -5,9 +5,9 @@ import { BannerNavBar, Footer } from '@pallassystems/website-core';
 import { RBTable } from '@pallassystems/react-bootstrap-table';
 
 // Getting Started Page Properties
-import { ApiColumns, ApiPageProperties, ApiTableEntry } from './api.types';
+import { ApiTableColumns, ApiPageProperties, ApiTableEntry } from '../api.types';
 import { Container, Row } from 'react-bootstrap';
-import { SimpleBannerExamplesData } from '../examples';
+import { SimpleBannerExamplesData } from '../../examples';
 // For code highlighting
 import 'prismjs/themes/prism.min.css';
 
@@ -42,7 +42,7 @@ const ApiNavbarPropertyPage: FC<ApiPageProperties> = ({ footerProps, navBarProps
           <p>Below we have provided the options you can supply to the BannerNavBar object.</p>
         </Row>
         <Row>
-          <RBTable columns={ApiColumns} data={NavbarPropertyData} enablePagination={false} />
+          <RBTable columns={ApiTableColumns} data={NavbarPropertyData} enablePagination={false} />
         </Row>
         <Row>
           <h2>Example</h2>

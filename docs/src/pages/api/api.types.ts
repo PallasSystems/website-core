@@ -1,9 +1,16 @@
 import { RBTColumnDefs } from '@pallassystems/react-bootstrap-table';
 import { FooterProperties, NavbarProperty } from '@pallassystems/website-core';
+import { ReactNode } from 'react';
 
 type ApiPageProperties = {
   footerProps?: FooterProperties;
   navBarProps?: NavbarProperty;
+};
+
+type ApiPage = {
+  link: string;
+  text: string;
+  page: (properties: ApiPageProperties) => ReactNode;
 };
 
 type ApiTableEntry = {
@@ -14,7 +21,7 @@ type ApiTableEntry = {
 };
 
 // Generate the props table
-const ApiColumns: RBTColumnDefs<ApiTableEntry>[] = [
+const ApiTableColumns: RBTColumnDefs<ApiTableEntry>[] = [
   {
     accessorKey: 'field',
     header: 'Field',
@@ -33,5 +40,5 @@ const ApiColumns: RBTColumnDefs<ApiTableEntry>[] = [
   },
 ];
 
-export { ApiColumns };
-export type { ApiPageProperties, ApiTableEntry };
+export { ApiTableColumns };
+export type { ApiPage, ApiPageProperties, ApiTableEntry };

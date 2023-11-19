@@ -1,11 +1,13 @@
 import { FC, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import Prism from 'prismjs';
 
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
 
 // Getting Started Page Properties
-import { ExamplesPageProperties } from './examples.types';
-import { Container, Row } from 'react-bootstrap';
+import { ExamplesPageProperties } from '../examples.types';
+import { GetSimpleBannerExample, SimpleBannerExamplesData } from './simple.data';
+
 // For code highlighting
 import 'prismjs/themes/prism.min.css';
 
@@ -47,23 +49,4 @@ const SimpleBannerExamplesComponent: FC = () => {
   );
 };
 
-const SimpleBannerExamplesData: BannerNavBar = {
-  brand: {
-    name: 'example project',
-  },
-  items: [{ text: 'menu1', path: '/path' }],
-};
-
-const GetSimpleBannerExample = (): string => {
-  return (
-    'const GettingStartedUsagePage: FC = () => {\n' +
-    '\treturn (\n' +
-    "\t\t<main role={'main'} className={'flex-shrink-0'}>\n" +
-    '\t\t\t<BannerNavBar />\n' +
-    '\t\t</main>\n' +
-    '\t);\n' +
-    '};'
-  );
-};
-
-export { SimpleBannerExamplesPage, SimpleBannerExamplesComponent, SimpleBannerExamplesData };
+export { SimpleBannerExamplesPage, SimpleBannerExamplesComponent };

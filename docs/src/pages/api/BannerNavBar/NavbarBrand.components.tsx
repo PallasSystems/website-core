@@ -5,28 +5,34 @@ import { BannerNavBar, Footer } from '@pallassystems/website-core';
 import { RBTable } from '@pallassystems/react-bootstrap-table';
 
 // Getting Started Page Properties
-import { ApiColumns, ApiPageProperties, ApiTableEntry } from './api.types';
+import { ApiTableColumns, ApiPageProperties, ApiTableEntry } from '../api.types';
 import { Container, Row } from 'react-bootstrap';
-import { SimpleBannerExamplesData } from '../examples';
+import { SimpleBannerExamplesData } from '../../examples';
 // For code highlighting
 import 'prismjs/themes/prism.min.css';
 
-const NavbarLinkPropertyData: ApiTableEntry[] = [
+const NavbarBrandData: ApiTableEntry[] = [
   {
-    field: 'path',
+    field: 'name',
     type: 'String',
     required: 'true',
-    description: 'The URL to use for the menu item',
+    description: 'The brand name for the website',
   },
   {
-    field: 'text',
-    type: 'String',
-    required: 'true',
-    description: 'The text to use for the menu item',
+    field: 'imgFn',
+    type: '(props?: ImageProperty) => ReactNode',
+    required: 'false',
+    description: 'Ability to return a React element to embed in the image location of the Brand.',
+  },
+  {
+    field: 'imgProps',
+    type: 'ImageProperty',
+    required: 'false',
+    description: 'Information to be supplied into the imgFn',
   },
 ];
 
-const ApiNavbarLinkPropertyPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
+const ApiNavbarBrandPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   useEffect(() => {
     Prism.highlightAll();
   });
@@ -36,20 +42,20 @@ const ApiNavbarLinkPropertyPage: FC<ApiPageProperties> = ({ footerProps, navBarP
       <BannerNavBar {...navBarProps} />
       <Container id='intro' className={'content my-5'}>
         <Row>
-          <h1>NavbarLinkProperty Options</h1>
+          <h1>NavbarBrand Options</h1>
         </Row>
         <Row>
           <p>Below we have provided the options you can supply to the BannerNavBar object.</p>
         </Row>
         <Row>
-          <RBTable columns={ApiColumns} data={NavbarLinkPropertyData} enablePagination={false} />
+          <RBTable columns={ApiTableColumns} data={NavbarBrandData} enablePagination={false} />
         </Row>
         <Row>
           <h2>Example</h2>
         </Row>
         <Row>
           <pre className={'language-javascript'}>
-            <code>{JSON.stringify(SimpleBannerExamplesData.items, null, 2)}</code>
+            <code>{JSON.stringify(SimpleBannerExamplesData.brand, null, 2)}</code>
           </pre>
         </Row>
       </Container>
@@ -58,4 +64,4 @@ const ApiNavbarLinkPropertyPage: FC<ApiPageProperties> = ({ footerProps, navBarP
   );
 };
 
-export { ApiNavbarLinkPropertyPage };
+export { ApiNavbarBrandPage };

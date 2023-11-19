@@ -1,33 +1,33 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import {
-  ApiNavbarPropertyPage,
-  ApiNavbarBrandPage,
-  ApiNavbarLinkPropertyPage,
-  ApiPage,
-  ExamplesPage,
+  ApiHeadPage,
+  ExamplesHeadPage,
   GettingStartedInstallPage,
   GettingStartedPage,
   GettingStartedUsagePage,
   HomePage,
-  SimpleBannerExamplesPage,
+  ApiBannerNavBarPageData,
 } from './pages';
 import { PageData } from './App.data';
+import { ExamplePageData } from './pages/examples/example.data';
 
 function App() {
   return (
     <HashRouter>
       <Routes>
         <Route path={''} element={<HomePage {...PageData} />} />
-        <Route path={'/api'} element={<ApiPage {...PageData} />} />
-        <Route path={'/api/navbarproperty'} element={<ApiNavbarPropertyPage {...PageData} />} />
-        <Route path={'/api/navbarbrand'} element={<ApiNavbarBrandPage {...PageData} />} />
-        <Route path={'/api/navbarlinkproperty'} element={<ApiNavbarLinkPropertyPage {...PageData} />} />
-        <Route path={'/examples'} element={<ExamplesPage {...PageData} />} />
-        <Route path={'/examples/simplebanner'} element={<SimpleBannerExamplesPage {...PageData} />} />
+        <Route path={'/api'} element={<ApiHeadPage {...PageData} />} />
+        {ApiBannerNavBarPageData.map((value) => {
+          return <Route path={value.link} element={value.page(PageData)} />;
+        })}
+        <Route path={'/examples'} element={<ExamplesHeadPage {...PageData} />} />
+        {ExamplePageData.map((value) => {
+          return <Route path={value.link} element={value.page(PageData)} />;
+        })}
         <Route path={'/gettingstarted'} element={<GettingStartedPage {...PageData} />} />
         <Route path={'/gettingstarted/install'} element={<GettingStartedInstallPage {...PageData} />} />
-        <Route path={'/gettingstarted/install'} element={<GettingStartedUsagePage {...PageData} />} />
+        <Route path={'/gettingstarted/usage'} element={<GettingStartedUsagePage {...PageData} />} />
         /examples/simplebanner
       </Routes>
     </HashRouter>
