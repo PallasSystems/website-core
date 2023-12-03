@@ -9,6 +9,8 @@ export interface NavbarLinkProperty {
 export interface NavbarProperty {
   brand?: NavbarBrand;
   items?: NavbarLinkProperty[];
+  fixed?: 'top' | 'bottom';
+  sticky?: 'top';
 }
 
 export interface NavbarBrand {

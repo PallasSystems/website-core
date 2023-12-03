@@ -7,10 +7,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import { NavbarProperty, NavbarLinkProperty, NavbarBrand } from './BannerNavBar.types';
-import { ImageProperty } from '../Common';
-import { TextWrap } from 'react-bootstrap-icons';
 
-const BannerNavBar: FC<NavbarProperty> = ({ brand, items }) => {
+const BannerNavBar: FC<NavbarProperty> = ({ brand, items, sticky, fixed }) => {
   const links = undefined === items || null == items ? [] : items;
 
   const GenerateBrandLogo = (brand: NavbarBrand): ReactNode => {
@@ -29,7 +27,7 @@ const BannerNavBar: FC<NavbarProperty> = ({ brand, items }) => {
 
   return (
     <header>
-      <Navbar expand='sm' bg='dark' variant='dark' fixed='top'>
+      <Navbar expand='sm' bg='dark' variant='dark' sticky={sticky} fixed={fixed}>
         <Container fluid>
           {brand ? (
             <>
