@@ -54,9 +54,9 @@ const BannerNavBar: FC<NavbarProperty> = ({ brand, items, sticky, fixed, headerC
   };
 
   return (
-    <header className={generateHeaderClassName(sticky)}>
+    <header className={generateHeaderClassName(headerClassName, fixed, sticky)}>
       {typeof prefixRow === 'function' ? prefixRow() : null}
-      <Navbar expand='sm' bg='dark' variant='dark' fixed={fixed}>
+      <Navbar expand='sm' bg='dark' variant='dark'>
         <Container fluid>
           {brand ? (
             <>
