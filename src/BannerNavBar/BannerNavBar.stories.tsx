@@ -48,6 +48,30 @@ Complete.args = {
   ],
 };
 
+export const PrefixRow = Template.bind({});
+PrefixRow.args = {
+  brand: {
+    name: 'Pallas Systems',
+    imgFn: (
+      <PallasSVG
+        id='BannerNavBar.Brand.Link.Logo.SVG'
+        alt='Pallas Systems Logo'
+        height='3.5rem'
+        width='4rem'
+        className='d-inline-block'
+      />
+    ),
+  },
+  items: [
+    { text: 'Getting Started', path: '' },
+    { text: 'User Guide', path: '/services' },
+    { text: 'Flying Wing', path: '/team' },
+  ],
+  prefixRow: () => {
+    return <h2>hello</h2>;
+  },
+};
+
 export const SpacedWords = Template.bind({});
 SpacedWords.args = {
   brand: {
