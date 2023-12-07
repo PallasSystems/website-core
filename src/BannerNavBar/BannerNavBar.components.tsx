@@ -7,8 +7,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import { NavbarProperty, NavbarLinkProperty, NavbarBrand } from './BannerNavBar.types';
+import { Col, Row } from 'react-bootstrap';
 
-const BannerNavBar: FC<NavbarProperty> = ({ brand, items, sticky, fixed }) => {
+const BannerNavBar: FC<NavbarProperty> = ({ brand, items, sticky, fixed, headerClassName, prefixRow, suffixRow }) => {
   const links = undefined === items || null == items ? [] : items;
 
   const GenerateBrandLogo = (brand: NavbarBrand): ReactNode => {
@@ -25,9 +26,37 @@ const BannerNavBar: FC<NavbarProperty> = ({ brand, items, sticky, fixed }) => {
     return result;
   };
 
+  /**
+   * This will combine css classes supplied and the sticky marker into a Class name string for the header element.
+   * @param headerClassName any CSS Class names to be assigned to the header element
+   * @param sticky
+   * @returns
+   */
+  const generateHeaderClassName = (headerClassName?: string, fixed?: string, sticky?: string): string => {
+    let result = '';
+    if (sticky && sticky.length > 0) {
+      result = 'sticky-' + sticky;
+
+      if (headerClassName && headerClassName.length > 0) {
+        result += ' ' + headerClassName;
+      }
+    } else if (fixed && fixed.length > 0) {
+      result = 'fixed-' + fixed;
+
+      if (headerClassName && headerClassName.length > 0) {
+        result += ' ' + headerClassName;
+      }
+    } else if (headerClassName && headerClassName.length > 0) {
+      result = headerClassName;
+    }
+
+    return result;
+  };
+
   return (
-    <header>
-      <Navbar expand='sm' bg='dark' variant='dark' sticky={sticky} fixed={fixed}>
+    <header className={generateHeaderClassName(sticky)}>
+      {typeof prefixRow === 'function' ? prefixRow() : null}
+      <Navbar expand='sm' bg='dark' variant='dark' fixed={fixed}>
         <Container fluid>
           {brand ? (
             <>
@@ -62,6 +91,7 @@ const BannerNavBar: FC<NavbarProperty> = ({ brand, items, sticky, fixed }) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      {typeof suffixRow === 'function' ? suffixRow() : null}
     </header>
   );
 };

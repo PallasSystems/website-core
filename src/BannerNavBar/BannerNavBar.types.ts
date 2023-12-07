@@ -9,6 +9,9 @@ export interface NavbarLinkProperty {
 export interface NavbarProperty {
   brand?: NavbarBrand;
   items?: NavbarLinkProperty[];
+  headerClassName?: string;
+  prefixRow?: () => ReactNode;
+  suffixRow?: () => ReactNode;
   fixed?: 'top' | 'bottom';
   sticky?: 'top';
 }
