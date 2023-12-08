@@ -23,13 +23,13 @@ const config: Config = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
-  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*stories.{ts,tsx}'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*stories.{ts,tsx}', '!src/**/*test.{ts,tsx}'],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: ['node_modules/', 'src/**/*{!(stories)}.{ts,tsx}'],
+  // coveragePathIgnorePatterns: ['node_modules/', 'src/**/*stories.{ts,tsx}', 'src/**/*test.{ts,tsx}'],
 
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: 'babel',
