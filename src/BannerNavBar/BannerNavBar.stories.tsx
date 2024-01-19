@@ -46,6 +46,10 @@ Complete.args = {
     { text: 'Services', path: '/services' },
     { text: 'Team', path: '/team' },
   ],
+  scm: {
+    project: 'test',
+    repository: 'repo',
+  },
 };
 
 export const PrefixRow = Template.bind({});

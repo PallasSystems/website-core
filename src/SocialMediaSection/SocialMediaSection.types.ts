@@ -14,5 +14,4 @@ export interface SocialMediaProperties {
   instagram?: string;
   twitter?: string;
   linkedin?: string;
-  scm?: SCMProperties;
 }

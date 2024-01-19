@@ -9,27 +9,15 @@ function isValidString(value?: string) {
   return value !== undefined && null != value && value.length > 1;
 }
 
-function hasSocialMediaValues(
-  facebook?: string,
-  instagram?: string,
-  twitter?: string,
-  linkedin?: string,
-  scm?: SCMProperties,
-) {
-  return (
-    isValidString(facebook) ||
-    isValidString(instagram) ||
-    isValidString(twitter) ||
-    isValidString(linkedin) ||
-    (undefined !== scm && null !== scm)
-  );
+function hasSocialMediaValues(facebook?: string, instagram?: string, twitter?: string, linkedin?: string) {
+  return isValidString(facebook) || isValidString(instagram) || isValidString(twitter) || isValidString(linkedin);
 }
 
-const SocialMediaSection: FC<SocialMediaProperties> = ({ headerText, facebook, instagram, twitter, linkedin, scm }) => {
+const SocialMediaSection: FC<SocialMediaProperties> = ({ headerText, facebook, instagram, twitter, linkedin }) => {
   return (
     <div id='SocialMediaSectionWrapper' className='pt-2'>
       {isValidString(headerText) ? <p>{headerText}</p> : null}
-      {hasSocialMediaValues(facebook, instagram, twitter, linkedin, scm) ? (
+      {hasSocialMediaValues(facebook, instagram, twitter, linkedin) ? (
         <p id='SocialMediaSectionWrapper.IconBlock'>
           {isValidString(facebook) ? (
             <a
@@ -67,7 +55,6 @@ const SocialMediaSection: FC<SocialMediaProperties> = ({ headerText, facebook, i
               <Twitter />
             </a>
           ) : null}
-          {scm === null || scm === undefined ? null : <SCMIcon {...scm} />}
         </p>
       ) : null}
     </div>

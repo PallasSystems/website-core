@@ -7,9 +7,24 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 import { NavbarProperty, NavbarLinkProperty } from './BannerNavBar.types';
 import { GenerateBrandLogo, GenerateHeaderClassName } from './BannerNavBar.utils';
+import { SCMIcon } from '../SCMIcon';
 
-const BannerNavBar: FC<NavbarProperty> = ({ brand, items, sticky, fixed, headerClassName, prefixRow, suffixRow }) => {
+const BannerNavBar: FC<NavbarProperty> = ({
+  brand,
+  items,
+  scm,
+  sticky,
+  fixed,
+  headerClassName,
+  prefixRow,
+  suffixRow,
+}) => {
   const links = undefined === items || null == items ? [] : items;
+  if (scm?.className) {
+    scm.className += ' active nav-link';
+  } else if (scm) {
+    scm.className = 'nav-link';
+  }
 
   return (
     <header className={GenerateHeaderClassName(headerClassName, fixed, sticky)}>
@@ -45,6 +60,7 @@ const BannerNavBar: FC<NavbarProperty> = ({ brand, items, sticky, fixed, headerC
                   </LinkContainer>
                 );
               })}
+              {scm ? <SCMIcon {...scm} /> : null}
             </Nav>
           </Navbar.Collapse>
         </Container>

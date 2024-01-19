@@ -18,9 +18,4 @@ Complete.args = {
   instagram: '6789',
   linkedin: 'abcdef',
   twitter: 'zyxwv',
-  scm: {
-    project: 'test',
-    repository: 'repo',
-    type: 'GitHub',
-  },
 };
