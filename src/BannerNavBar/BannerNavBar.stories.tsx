@@ -49,6 +49,12 @@ Complete.args = {
   scm: {
     project: 'test',
     repository: 'repo',
+    imgProps: {
+      id: 'SourceLink',
+      height: '2rem',
+      width: '2.5rem',
+      className: 'd-inline-block',
+    },
   },
 };
 

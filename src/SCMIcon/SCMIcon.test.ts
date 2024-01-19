@@ -19,7 +19,7 @@ describe('IsGitHubRepository', () => {
 
 describe('GenerateGitBrowseURL', () => {
   test('NoParams', () => {
-    expect(GenerateGitBrowseURL('', '')).toBe('https://github.com/');
+    expect(GenerateGitBrowseURL('', '')).toBeFalsy();
   });
 
   test('Complete', () => {
@@ -27,6 +27,6 @@ describe('GenerateGitBrowseURL', () => {
   });
 
   test('Complete', () => {
-    expect(GenerateGitBrowseURL('example', 'test', 'https://gitlab.com')).toBe('https://gitlab.com/example/test');
+    expect(GenerateGitBrowseURL('example', 'test', 'https://gitlab.com')).toBe('https://gitlab.com/test/example');
   });
 });

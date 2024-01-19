@@ -7,7 +7,6 @@ import { ImageProperty } from '../Common';
 
 export const SCMIcon: FC<SCMProperties> = ({ endpoint, project, repository, className, imgFn, imgProps }) => {
   const url = GenerateGitBrowseURL(repository, project, endpoint);
-  console.log('class name: ' + className);
   const linkClass = className && className.trim().length > 0 ? className : 'text-light';
 
   /**

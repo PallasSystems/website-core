@@ -3,15 +3,14 @@ import React, { FC } from 'react';
 import { Facebook, Instagram, Linkedin, Twitter } from 'react-bootstrap-icons';
 // Footer Properties
 import { SocialMediaProperties } from './SocialMediaSection.types';
-import { SCMIcon, SCMProperties } from '../SCMIcon';
 
-function isValidString(value?: string) {
+const isValidString = (value?: string) => {
   return value !== undefined && null != value && value.length > 1;
-}
+};
 
-function hasSocialMediaValues(facebook?: string, instagram?: string, twitter?: string, linkedin?: string) {
+const hasSocialMediaValues = (facebook?: string, instagram?: string, twitter?: string, linkedin?: string) => {
   return isValidString(facebook) || isValidString(instagram) || isValidString(twitter) || isValidString(linkedin);
-}
+};
 
 const SocialMediaSection: FC<SocialMediaProperties> = ({ headerText, facebook, instagram, twitter, linkedin }) => {
   return (

@@ -29,30 +29,5 @@ export const GenerateGitBrowseURL = (repository: string, project: string, endpoi
     }
   }
 
-  if (undefined === endpoint || null === endpoint || 0 === endpoint.length) {
-    result += 'https://github.com/';
-  } else {
-    result += endpoint;
-  }
-
-  if (undefined !== project && null !== project && project.length > 0) {
-    if (!result.endsWith('/')) {
-      result += '/';
-    }
-
-    result += project;
-    result += '/';
-  }
-
-  if (undefined === repository || null === repository || 0 === repository.length) {
-    result = '';
-  } else {
-    if (!result.endsWith('/')) {
-      result += '/';
-    }
-
-    result += repository;
-  }
-
   return result;
 };
