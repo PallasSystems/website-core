@@ -17,7 +17,7 @@ const SocialMediaSection: FC<SocialMediaProperties> = ({ headerText, facebook, i
     <div id='SocialMediaSectionWrapper' className='pt-2'>
       {isValidString(headerText) ? <p>{headerText}</p> : null}
       {hasSocialMediaValues(facebook, instagram, twitter, linkedin) ? (
-        <p id='SocialMediaSectionWrapper.IconBlock'>
+        <p id='SocialMediaSectionWrapper.IconBlock' className={'m-1'}>
           {isValidString(facebook) ? (
             <a
               id='SocialMediaSectionWrapper.IconBlock.facebook'
