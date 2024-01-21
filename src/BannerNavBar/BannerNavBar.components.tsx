@@ -8,7 +8,6 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { NavbarProperty, NavbarLinkProperty } from './BannerNavBar.types';
 import { GenerateBrandLogo, GenerateHeaderClassName } from './BannerNavBar.utils';
 import { SCMIcon } from '../SCMIcon';
-import { LanguageVariant } from 'typescript';
 
 const BannerNavBar: FC<NavbarProperty> = ({
   brand,
