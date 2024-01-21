@@ -10,13 +10,13 @@ import { ContactProperties, AddressSectionProperties } from './ContactSection.ty
  * @param {String} value - The Contact section string we want to validate and append
  */
 function validateAddressValue(value?: string) {
-    let result = ''
+  let result = '';
 
-    if (value !== undefined && value !== null && value.length > 0) {
-        result += value + ', ';
-    }
+  if (value !== undefined && value !== null && value.length > 0) {
+    result += value + ', ';
+  }
 
-    return result;
+  return result;
 }
 
 /**
@@ -25,45 +25,59 @@ function validateAddressValue(value?: string) {
  * @return An empty String, or a CSV representation of the address
  */
 function constructAddressString(props?: AddressSectionProperties) {
-    let result = ''
+  let result = '';
 
-    if (undefined !== props && null !== props) {
-        result += props.line1 + ', ';
-        result += validateAddressValue(props.line2);
-        result += props.city + ', '
-        result += validateAddressValue(props.county);
-        result += props.country + ', ';
-        result += props.postCode;
-    }
+  if (undefined !== props && null !== props) {
+    result += props.line1 + ', ';
+    result += validateAddressValue(props.line2);
+    result += props.city + ', ';
+    result += validateAddressValue(props.county);
+    result += props.country + ', ';
+    result += props.postCode;
+  }
 
-    return result;
+  return result;
 }
 
 function isValidString(value?: string) {
-    return value !== undefined && null != value && value.length > 1;
+  return value !== undefined && null != value && value.length > 1;
 }
 
 const ContactSection: FC<ContactProperties> = ({ email, fax, mobile, landline, address }) => {
+  const addressString = constructAddressString(address);
 
-    const addressString =  constructAddressString(address);
-
-    return (
-        <div id="ContactWrapper" className="pt-2">
-            <h5 className={"text-uppercase fw-bold mb-4"}>Contact</h5>
-            { addressString.length > 0 ? <p><House /> {addressString}</p> : null }
-            { isValidString(email) ?
-                <p>
-                    <a href={ "mailto: " + email }>
-                        <Envelope /> {email}
-                    </a>
-                </p>
-                : null
-            }
-            { isValidString(fax) ? <p><Printer /> { fax }</p> : null }
-            { isValidString(mobile) ? <p><Phone /> { mobile }</p> : null }
-            { isValidString(landline) ? <p><Telephone /> { landline }</p> : null }
-        </div>
-    )
+  return (
+    <div id='ContactWrapper' className='pt-2'>
+      <h5 className={'text-uppercase fw-bold mb-2'}>Contact</h5>
+      {addressString.length > 0 ? (
+        <p className={'m-1'}>
+          <House /> {addressString}
+        </p>
+      ) : null}
+      {isValidString(email) ? (
+        <p className={'m-1'}>
+          <a href={'mailto: ' + email}>
+            <Envelope /> {email}
+          </a>
+        </p>
+      ) : null}
+      {isValidString(fax) ? (
+        <p className={'m-1'}>
+          <Printer /> {fax}
+        </p>
+      ) : null}
+      {isValidString(mobile) ? (
+        <p>
+          <Phone /> {mobile}
+        </p>
+      ) : null}
+      {isValidString(landline) ? (
+        <p className={'m-1'}>
+          <Telephone /> {landline}
+        </p>
+      ) : null}
+    </div>
+  );
 };
 
-export {ContactSection};
+export { ContactSection };
