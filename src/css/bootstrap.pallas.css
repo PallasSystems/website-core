@@ -24,6 +24,11 @@ span.text-muted {
   padding: 0;
 }
 
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 /*
  * Carousel CSS to keep things well spaced
  * -------------------------------------------------- */

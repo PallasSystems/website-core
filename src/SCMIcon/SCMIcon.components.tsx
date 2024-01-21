@@ -26,7 +26,7 @@ export const SCMIcon: FC<SCMProperties> = ({ endpoint, project, repository, clas
     } else {
       const props: IconProps = imgProps ? imgProps : {};
       if (IsGitHubRepository(url)) {
-        result = <Github {...props} />;
+        result = <Github title={'GitHub'} {...props} />;
       } else {
         result = <Git {...props} />;
       }
