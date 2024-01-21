@@ -1,5 +1,3 @@
-import { SCMProperties } from '../SCMIcon/index';
-
 /**
  * @typedef {object} SocialMediaProperties
  * @property {String=} SocialMediaProperties.facebook - Faceboook Group Identifier,

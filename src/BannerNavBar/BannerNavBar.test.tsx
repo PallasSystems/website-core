@@ -17,6 +17,5 @@ test('Confirm the correct label is added.', () => {
   const result = render(<BannerNavBar {...socialProps} />);
 
   const githubURL = '[href="https://github.com/' + scmProps.project + '/' + scmProps.repository + '"';
-  const scm = result.container.querySelector(githubURL);
-  //expect(scm).toBeValid();
+  expect(result.container.querySelector(githubURL)).toBeValid();
 });

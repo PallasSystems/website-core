@@ -1,5 +1,3 @@
-import { ImageProperty } from '../Common';
-
 export const IsGitHubRepository = (url: string) => {
   return url.indexOf('github') > -1;
 };
