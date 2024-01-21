@@ -46,6 +46,16 @@ Complete.args = {
     { text: 'Services', path: '/services' },
     { text: 'Team', path: '/team' },
   ],
+  scm: {
+    project: 'test',
+    repository: 'repo',
+    imgProps: {
+      id: 'SourceLink',
+      height: '2rem',
+      width: '2.5rem',
+      className: 'd-inline-block',
+    },
+  },
 };
 
 export const PrefixRow = Template.bind({});

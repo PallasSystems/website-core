@@ -19,18 +19,23 @@ export const PageData: HomePageProperties = {
       { path: '/api', text: 'API' },
       { path: '/examples', text: 'Examples' },
     ],
+    scm: {
+      project: 'PallasSystems',
+      repository: 'website-core',
+      imgProps: {
+        id: 'website-core-github',
+        height: '2rem',
+        width: '2.5rem',
+        className: 'd-inline-block',
+      },
+    },
   },
   footerProps: {
     socialMedia: {
-      headerText: 'Get connected with us on social networks',
+      headerText: 'Contact Us',
       facebook: '350073883439443',
       linkedin: 'pallas-systems-ltd',
       twitter: 'PallasUK',
-      scm: {
-        project: 'PallasSystems',
-        repository: 'website-core',
-        type: 'github',
-      },
     },
     companyName: 'Pallas Systems',
     companyNameLink: 'https://www.pallas.uk',

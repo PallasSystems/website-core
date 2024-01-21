@@ -8,16 +8,6 @@ import { FooterProperties } from './Footer.types';
 import { ContactSection } from '../ContactSection';
 import { SocialMediaSection } from '../SocialMediaSection';
 
-function getValidString(defaultValue: string, value?: string) {
-  let result = value;
-
-  if (value === undefined || null === value || value.length < 1) {
-    result = defaultValue;
-  }
-
-  return result;
-}
-
 const Footer: FC<FooterProperties> = ({ companyName, companyNameLink, contact, socialMedia }) => {
   return (
     <footer className='footer d-flex align-items-end mt-auto py-4 bg-dark text-light'>
@@ -25,9 +15,9 @@ const Footer: FC<FooterProperties> = ({ companyName, companyNameLink, contact, s
         <Row>
           <Col className={'mx-auto mb-md-0 mb-4'} md={4} lg={3} xl={3}>
             {contact ? <ContactSection {...contact} /> : null}
+            {socialMedia ? <SocialMediaSection {...socialMedia} /> : null}
           </Col>
           <Col className={'mx-auto mb-md-0 mb-4'} md={4} lg={3} xl={3}>
-            {socialMedia ? <SocialMediaSection {...socialMedia} /> : null}
             <div id='CopyRightWrapper' className='pt-3'>
               <p>
                 © 2022–2023

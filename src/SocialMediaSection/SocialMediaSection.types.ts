@@ -1,5 +1,3 @@
-import { SCMProperties } from '../SCMIcon/index';
-
 /**
  * @typedef {object} SocialMediaProperties
  * @property {String=} SocialMediaProperties.facebook - Faceboook Group Identifier,
@@ -14,5 +12,4 @@ export interface SocialMediaProperties {
   instagram?: string;
   twitter?: string;
   linkedin?: string;
-  scm?: SCMProperties;
 }

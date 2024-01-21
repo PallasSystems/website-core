@@ -16,18 +16,11 @@ export const Pallas = Template.bind({});
 Pallas.args = {
   contact: {
     email: 'info@pallas.uk',
-    mobile: '+44 7861 530488',
   },
   socialMedia: {
-    headerText: 'Get connected with us on social networks',
     facebook: '350073883439443',
     linkedin: 'pallas-systems-ltd',
     twitter: 'PallasUK',
-    scm: {
-      project: 'PallasSystems',
-      repository: 'website-core',
-      type: 'github',
-    },
   },
   companyName: 'Pallas Systems',
   companyNameLink: 'https://www.pallas.uk',
@@ -50,17 +43,10 @@ Complete.args = {
     landline: '01234 567890',
   },
   socialMedia: {
-    headerText: 'Get connected with us on social networks',
     facebook: '12345',
     instagram: '6789',
     linkedin: 'abcdef',
     twitter: 'zyxwv',
-    scm: {
-      endpoint: 'http://localhost/',
-      project: 'proj',
-      repository: 'repo',
-      type: 'git',
-    },
   },
   companyName: 'Boring Company',
   companyNameLink: 'https://www.pallas.uk',
