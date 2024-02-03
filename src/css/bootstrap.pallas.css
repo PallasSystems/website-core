@@ -13,38 +13,14 @@ a {
   text-decoration: none;
 }
 
-/* Featurette changes, used stock theme this
- * modifies to help keep parts highly visible
--------------------------------------------------- */
-span.text-muted {
-  font-style: italic;
-}
-
-.accordion-body {
-  padding: 0;
-}
-
 .navbar {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
 
-/*
- * Carousel CSS to keep things well spaced
- * -------------------------------------------------- */
-.carousel {
-  margin-bottom: 2rem;
-}
-
-/*
- * Since positioning the image, we need to help out
- * the caption
+/**
+ *
  */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
-}
-
 div.content {
   padding-top: 1rem !important;
   padding-bottom: 2rem !important;
@@ -57,20 +33,6 @@ img.content {
   padding-left: 1rem !important;
 }
 
-@media only screen and (max-width: 540px) {
-  div.content-row {
-    padding-right: 1rem !important;
-    padding-left: 1rem !important;
-  }
-}
-
-@media only screen and (min-width: 540px) {
-  div.content-row {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
-  }
-}
-
 /*
  * Declare different heights because we have used
  * rem and that is a function of text height and
@@ -78,39 +40,20 @@ img.content {
  * required height of the box).
  */
 @media only screen and (max-width: 300px) {
-  .carousel-item {
-    height: 20rem;
-  }
-
-  .carousel-item > img {
-    min-width: 100%;
-    height: 20rem;
+  .navbar-toggler {
+    padding-top: 3rem;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  .carousel-item {
-    height: 15rem;
-  }
-
-  .carousel-item > img {
-    min-width: 100%;
-    height: 15rem;
+  nav.navbar_suffix_menu {
+    display: none;
   }
 }
 
 @media only screen and (min-width: 540px) {
-  .carousel-item {
-    height: 13rem;
-  }
-
-  .carousel-item > img {
-    min-width: 100%;
-    height: 13rem;
-  }
-
-  .service-list {
-    padding-top: 3rem !important;
+  a.navbar_collapse_menu {
+    display: none;
   }
 }
 
