@@ -43,32 +43,47 @@ const BannerNavBar: FC<NavbarProperty> = ({
               )}
             </>
           ) : null}
-          {scm ? (
-            <Container className={'d-flex navbar-nav justify-content-end text-light'}>
-              <SCMIcon {...scm} />
-            </Container>
-          ) : null}
+          <Navbar.Toggle id='responsive-navbar-btn' aria-controls='responsive-navbar-nav' />
+          <Navbar.Collapse id='responsive-navbar-nav' className='justify-content-end'>
+            <Nav className='d-flex'>
+              {scm ? (
+                <Nav.Link key={'BannerNavBar.Link.scm'} id={'BannerNavBar.Link.scm'}>
+                  <SCMIcon {...scm} />
+                </Nav.Link>
+              ) : null}
+              {links.map((link: NavbarLinkProperty) => {
+                return (
+                  <LinkContainer key={'BannerNavBar.Link.' + link.text} to={link.path}>
+                    <Nav.Link
+                      key={'BannerNavBar.Link.Text.' + link.text}
+                      id={'BannerNavBar.Link.Text.' + link.text}
+                      className={typeof suffixRow === 'function' ? '' : 'navbar_collapse_menu'}
+                    >
+                      {link.text}
+                    </Nav.Link>
+                  </LinkContainer>
+                );
+              })}
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
       {typeof suffixRow === 'function' ? (
         suffixRow()
       ) : (
-        <Navbar expand='sm' bg='dark' variant='dark'>
+        <Navbar expand='sm' bg='dark' variant='dark' className={'navbar_suffix_menu'}>
           <Container fluid className={'border-top'}>
-            <Navbar.Toggle id='responsive-navbar-btn' aria-controls='responsive-navbar-nav' />
-            <Navbar.Collapse id='responsive-navbar-nav'>
-              <Nav className='d-flex'>
-                {links.map((link: NavbarLinkProperty, index: number) => {
-                  return (
-                    <LinkContainer key={'BannerNavBar.Link.' + index} to={link.path}>
-                      <Nav.Link key={'BannerNavBar.Link.Text.' + index} id={'BannerNavBar.Link.Text.' + index}>
-                        {link.text}
-                      </Nav.Link>
-                    </LinkContainer>
-                  );
-                })}
-              </Nav>
-            </Navbar.Collapse>
+            <Nav className='d-flex'>
+              {links.map((link: NavbarLinkProperty) => {
+                return (
+                  <LinkContainer key={'SuffixNavBar.Link.' + link.text} to={link.path}>
+                    <Nav.Link key={'SuffixNavBar.Link.Text.' + link.text} id={'SuffixNavBar.Link.Text.' + link.text}>
+                      {link.text}
+                    </Nav.Link>
+                  </LinkContainer>
+                );
+              })}
+            </Nav>
           </Container>
         </Navbar>
       )}
