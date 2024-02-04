@@ -39,12 +39,6 @@ img.content {
  * screen width changes the text height (and the
  * required height of the box).
  */
-@media only screen and (max-width: 300px) {
-  .navbar-toggler {
-    padding-top: 3rem;
-  }
-}
-
 @media only screen and (max-width: 540px) {
   nav.navbar_suffix_menu {
     display: none;
