@@ -7,7 +7,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 import { NavbarProperty, NavbarLinkProperty } from './BannerNavBar.types';
 import { GenerateBrandLogo, GenerateHeaderClassName } from './BannerNavBar.utils';
-import { SCMIcon } from '../SCMIcon';
+import { GenerateGitBrowseURL, SCMIcon } from '../SCMIcon';
 
 const BannerNavBar: FC<NavbarProperty> = ({
   brand,
@@ -47,7 +47,11 @@ const BannerNavBar: FC<NavbarProperty> = ({
           <Navbar.Collapse id='responsive-navbar-nav' className='justify-content-end'>
             <Nav className='d-flex'>
               {scm ? (
-                <Nav.Link key={'BannerNavBar.Link.scm'} id={'BannerNavBar.Link.scm'}>
+                <Nav.Link
+                  key={'BannerNavBar.Link.scm'}
+                  id={'BannerNavBar.Link.scm'}
+                  href={GenerateGitBrowseURL(scm.repository, scm.project, scm.endpoint)}
+                >
                   <SCMIcon {...scm} />
                 </Nav.Link>
               ) : null}
