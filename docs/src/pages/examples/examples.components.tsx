@@ -10,9 +10,10 @@ import { ExamplePageData } from './example.data';
 
 const ExamplesHeadPage: FC<ExamplesPageProperties> = ({ footerProps, navBarProps }) => {
   return (
-    <main role={'main'} className={'flex-shrink-0'}>
-      <BannerNavBar {...navBarProps} />
-      <Container id='intro' className={'content'}>
+    <>
+    <BannerNavBar {...navBarProps} />
+    <main className={'flex-grow-1'} role={'main'}>
+      <Container id='intro' className={'my-2'}>
         <Row>
           <h1>Examples</h1>
         </Row>
@@ -30,8 +31,9 @@ const ExamplesHeadPage: FC<ExamplesPageProperties> = ({ footerProps, navBarProps
           </ul>
         </Row>
       </Container>
-      <Footer {...footerProps} />
     </main>
+    <Footer {...footerProps} />
+    </>
   );
 };
 

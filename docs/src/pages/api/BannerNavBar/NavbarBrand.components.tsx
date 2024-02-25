@@ -38,9 +38,10 @@ const ApiNavbarBrandPage: FC<ApiPageProperties> = ({ footerProps, navBarProps })
   });
 
   return (
-    <main role={'main'} className={'flex-shrink-0'}>
-      <BannerNavBar {...navBarProps} />
-      <Container id='intro' className={'content'}>
+    <>
+    <BannerNavBar {...navBarProps} />
+    <main className={'flex-grow-1'} role={'main'}>
+      <Container id='intro' className={'my-2'}>
         <Row>
           <h1>NavbarBrand Options</h1>
         </Row>
@@ -48,7 +49,7 @@ const ApiNavbarBrandPage: FC<ApiPageProperties> = ({ footerProps, navBarProps })
           <p>Below we have provided the options you can supply to the BannerNavBar object.</p>
         </Row>
         <Row>
-          <RBTable columns={ApiTableColumns} data={NavbarBrandData} enablePagination={false} />
+          <RBTable columns={ApiTableColumns} data={NavbarBrandData} />
         </Row>
         <Row>
           <h2>Example</h2>
@@ -59,8 +60,9 @@ const ApiNavbarBrandPage: FC<ApiPageProperties> = ({ footerProps, navBarProps })
           </pre>
         </Row>
       </Container>
+      </main>
       <Footer {...footerProps} />
-    </main>
+    </>
   );
 };
 
