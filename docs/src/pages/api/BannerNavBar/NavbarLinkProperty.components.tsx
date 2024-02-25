@@ -32,9 +32,10 @@ const ApiNavbarLinkPropertyPage: FC<ApiPageProperties> = ({ footerProps, navBarP
   });
 
   return (
-    <main role={'main'} className={'flex-shrink-0'}>
-      <BannerNavBar {...navBarProps} />
-      <Container id='intro' className={'content'}>
+    <>
+    <BannerNavBar {...navBarProps} />
+    <main className={'flex-grow-1'} role={'main'}>
+      <Container id='intro' className={'my-2'}>
         <Row>
           <h1>NavbarLinkProperty Options</h1>
         </Row>
@@ -53,8 +54,9 @@ const ApiNavbarLinkPropertyPage: FC<ApiPageProperties> = ({ footerProps, navBarP
           </pre>
         </Row>
       </Container>
+      </main>
       <Footer {...footerProps} />
-    </main>
+    </>
   );
 };
 

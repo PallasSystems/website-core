@@ -9,9 +9,10 @@ import { ApiBannerNavBarPageData } from './BannerNavBar/BannerNavBar.data';
 
 const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   return (
-    <main role={'main'} className={'flex-shrink-0'}>
-      <BannerNavBar {...navBarProps} />
-      <Container id='intro' className={'content'}>
+    <>
+    <BannerNavBar {...navBarProps} />
+    <main className={'flex-grow-1'} role={'main'}>
+      <Container id='intro'>
         <Row className={'my-2'}>
           <h1>API Reference</h1>
         </Row>
@@ -32,8 +33,9 @@ const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
           </ul>
         </Row>
       </Container>
+      </main>
       <Footer {...footerProps} />
-    </main>
+    </>
   );
 };
 

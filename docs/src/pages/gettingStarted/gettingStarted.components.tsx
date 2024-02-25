@@ -11,9 +11,10 @@ import { GettingStartedUsageComponent } from './gettingStarted.usage.components'
 
 const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, navBarProps }) => {
   return (
-    <main role={'main'} className={'flex-shrink-0'}>
-      <BannerNavBar {...navBarProps} />
-      <Container id='intro' className={'content'}>
+    <>
+    <BannerNavBar {...navBarProps} />
+    <main className={'flex-grow-1'} role={'main'}>
+      <Container id='intro'>
         <Row className={'my-2'}>
           <GettingStartedInstallComponent />
         </Row>
@@ -21,8 +22,9 @@ const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, nav
           <GettingStartedUsageComponent />
         </Row>
       </Container>
+      </main>
       <Footer {...footerProps} />
-    </main>
+    </>
   );
 };
 

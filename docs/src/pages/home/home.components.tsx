@@ -13,8 +13,8 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
   return (
     <>
       <BannerNavBar {...navBarProps} />
-      <main role={'main'} className={'flex-grow-1'}>
-        <Container id='intro' className={'content text-center'}>
+      <main className={'flex-grow-1'} role={'main'}>
+        <Container fluid id={'home.container'} className={'text-center content'}>
           <Row className={'my-2'}>
             <h1>Website Core Components</h1>
           </Row>
