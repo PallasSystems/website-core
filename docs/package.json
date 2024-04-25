@@ -15,13 +15,13 @@
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-bootstrap-icons": "^1.11.4",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.0",
     "react-router": ">=6.23.0"
   },
   "devDependencies": {
     "@types/prismjs": "^1.26.3",
     "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "@vitejs/plugin-react": "^4.2.1",
