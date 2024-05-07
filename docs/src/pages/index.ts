@@ -10,13 +10,7 @@ export {
 } from './api/index';
 export type { ApiPage, ApiPageProperties, ApiTableEntry } from './api';
 
-export {
-  ExamplesHeadPage,
-  ExamplePageData,
-  SimpleBannerExamplesPage,
-  SimpleBannerExamplesComponent,
-  SimpleBannerExamplesData,
-} from './examples';
+export { ExamplesHeadPage, ExamplePageData } from './examples';
 export type { ExamplesPage, ExamplesPageProperties } from './examples';
 
 export { GettingStartedPage, GettingStartedInstallPage, GettingStartedUsagePage } from './gettingStarted/index';

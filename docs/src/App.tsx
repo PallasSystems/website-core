@@ -23,7 +23,16 @@ function App() {
         })}
         <Route path={'/examples'} element={<ExamplesHeadPage {...PageData} />} />
         {ExamplePageData.map((value) => {
-          return <Route path={value.link} element={value.page(PageData)} />;
+          return (
+            <Route
+              path={value.link}
+              element={value.page({
+                footerProps: PageData.footerProps,
+                navBarProps: PageData.navBarProps,
+                storybookId: value.id,
+              })}
+            />
+          );
         })}
         <Route path={'/gettingstarted'} element={<GettingStartedPage {...PageData} />} />
         <Route path={'/gettingstarted/install'} element={<GettingStartedInstallPage {...PageData} />} />
