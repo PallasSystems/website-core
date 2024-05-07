@@ -33,27 +33,27 @@ const ApiNavbarPropertyPage: FC<ApiPageProperties> = ({ footerProps, navBarProps
 
   return (
     <>
-    <BannerNavBar {...navBarProps} />
-    <main className={'flex-grow-1'} role={'main'}>
-      <Container id='intro' className={'my-2'}>
-        <Row>
-          <h1>NavbarProperty Options</h1>
-        </Row>
-        <Row>
-          <p>Below we have provided the options you can supply to the BannerNavBar object.</p>
-        </Row>
-        <Row>
-          <RBTable columns={ApiTableColumns} data={NavbarPropertyData} enablePagination={false} />
-        </Row>
-        <Row>
-          <h2>Example</h2>
-        </Row>
-        <Row>
-          <pre className={'language-javascript'}>
-            <code>{JSON.stringify(SimpleBannerExamplesData, null, 2)}</code>
-          </pre>
-        </Row>
-      </Container>
+      <BannerNavBar {...navBarProps} />
+      <main className={'flex-grow-1'} role={'main'}>
+        <Container id='intro' className={'my-2'}>
+          <Row>
+            <h1>NavbarProperty Options</h1>
+          </Row>
+          <Row>
+            <p>Below we have provided the options you can supply to the BannerNavBar object.</p>
+          </Row>
+          <Row>
+            <RBTable columns={ApiTableColumns} data={NavbarPropertyData} />
+          </Row>
+          <Row>
+            <h2>Example</h2>
+          </Row>
+          <Row>
+            <pre className={'language-javascript'}>
+              <code></code>
+            </pre>
+          </Row>
+        </Container>
       </main>
       <Footer {...footerProps} />
     </>

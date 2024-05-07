@@ -1,0 +1,23 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as BannerNavBarStories from './BannerNavBar.stories';
+
+<Meta of={BannerNavBarStories} />
+
+# Branding Only NavBar
+
+The Navigation Bar expects a brand name and will produce a basic Bootstrap NavBar object to display this.
+
+<Canvas of={BannerNavBarStories.Minimal} />
+
+# Basic NavBar
+
+It is expected that any tool built using this framework will consist of multiple pages and so the Navigational bar will include a second row holding links to these pages. Currently the links expect to use the React Router component to generate.
+
+<Canvas of={BannerNavBarStories.Basic} />
+
+# Standard NavBar
+
+Typically a tool should contain the link to the source code, a branding icon, the tool name and a selection of sub pages the brand bar is associated with, as shown below.
+
+<Canvas of={BannerNavBarStories.Complete} />
