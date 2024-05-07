@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import { BannerNavBar } from './BannerNavBar.components';
 import { PallasSVG } from '../Common';
 
-export default {
+const meta: Meta<typeof BannerNavBar> = {
   component: BannerNavBar,
+  //👇 Enables auto-generated documentation for the component story
   decorators: [
     (Story) => (
       <HashRouter>
@@ -21,11 +22,32 @@ export default {
   ],
 };
 
+export default meta;
+
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof BannerNavBar> = (args) => <BannerNavBar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Minimal = Template.bind({});
+Minimal.args = {
+  brand: {
+    name: 'Pallas Systems',
+  },
+};
+
+export const Basic = Template.bind({});
+Basic.args = {
+  brand: {
+    name: 'Pallas Systems',
+  },
+  items: [
+    { text: 'Menu 1', path: '' },
+    { text: 'Menu 2', path: '/services' },
+    { text: 'Menu 3', path: '/team' },
+  ],
+};
 
 export const Complete = Template.bind({});
 Complete.args = {

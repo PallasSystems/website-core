@@ -1,14 +1,15 @@
 import { ReactNode } from 'react';
 
-import { ExamplesPage, ExamplesPageProperties } from './examples.types';
-import { SimpleBannerExamplesPage } from './simple';
+import { ExampleStorybookPageProperties, ExamplesPage } from './examples.types';
+import { ExampleStorybookPage } from './example.storybook.components';
 
 export const ExamplePageData: ExamplesPage[] = [
   {
-    link: '/example/simple',
-    text: 'Simple Navbar Example',
-    page: (data: ExamplesPageProperties): ReactNode => {
-      return SimpleBannerExamplesPage(data);
+    link: '/example/bannernavbar',
+    text: 'Banner NavBar Examples',
+    id: 'bannernavbar--documentation',
+    page: (data: ExampleStorybookPageProperties): ReactNode => {
+      return ExampleStorybookPage(data);
     },
   },
 ];

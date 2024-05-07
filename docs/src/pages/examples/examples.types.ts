@@ -6,10 +6,17 @@ type ExamplesPageProperties = {
   navBarProps?: NavbarProperty;
 };
 
+type ExampleStorybookPageProperties = {
+  footerProps?: FooterProperties;
+  navBarProps?: NavbarProperty;
+  storybookId: string;
+};
+
 type ExamplesPage = {
   link: string;
   text: string;
-  page: (properties: ExamplesPageProperties) => ReactNode;
+  id: string;
+  page: (properties: ExampleStorybookPageProperties) => ReactNode;
 };
 
-export type { ExamplesPage, ExamplesPageProperties };
+export type { ExamplesPage, ExamplesPageProperties, ExampleStorybookPageProperties };
