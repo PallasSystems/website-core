@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@pallassystems/react-bootstrap-table": "^0.6.6",
+    "@pallassystems/react-bootstrap-table": "^0.6.7",
     "bootstrap": ">=5.3.3",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
