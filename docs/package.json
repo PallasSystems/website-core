@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "copy:storybook": "rm -rf ./public/storybook-static && cp -R ../storybook-static ./public/",
-    "dev": "npm run copy:storybook && vite",
-    "build": "npm run copy:storybook && vite build",
+    "clean": "rm -rf ./dist ./coverage ./public/storybook-static eslint_report.json stylelint_report.json junit.xml",
+    "dev": "npm run clean && npm run build:storybook && vite",
+    "build": "npm run clean && npm run build:storybook && vite build",
+    "build:storybook": "storybook build -o ./public/storybook-static",
+    "storybook": "storybook dev -p 6006",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -20,6 +22,7 @@
     "react-router": ">=6.23.0"
   },
   "devDependencies": {
+    "@storybook/builder-vite": "^8.1.1",
     "@types/prismjs": "^1.26.4",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
