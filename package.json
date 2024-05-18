@@ -2,7 +2,7 @@
   "name": "@pallassystems/website-core",
   "version": "0.6.3",
   "description": "Components to enable the creation of Pallas Systems themed websites",
-  "homepage": "https://website-core.pallas.uk",
+  "homepage": "https://pallassystems.github.io/website-core/",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.js",
