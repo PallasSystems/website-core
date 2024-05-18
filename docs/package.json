@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://pallassystems.github.io/website-core/",
+  "license": "UNLICENSED",
   "scripts": {
     "clean": "rm -rf ./dist ./coverage ./public/storybook-static eslint_report.json stylelint_report.json junit.xml",
     "dev": "npm run clean && npm run build:storybook && vite",

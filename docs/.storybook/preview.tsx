@@ -1,9 +1,9 @@
 import { Preview } from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../src/css/base.css';
 import '../../src/css/bootstrap.solar.css';
 import '../../src/css/bootstrap.pallas.css';
+import '../../src/css/base.css';
 
 import 'bootstrap/dist/js/bootstrap.bundle';
 
