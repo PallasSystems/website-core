@@ -17,7 +17,7 @@ export const PageData: HomePageProperties = {
     items: [
       { path: '/gettingStarted', text: 'Getting Started' },
       { path: '/api', text: 'API' },
-      { path: '/examples', text: 'Examples' },
+      { text: 'Examples', items: [{ path: '/example/bannernavbar', text: 'Banner NavBar Examples' }] },
     ],
     scm: {
       project: 'PallasSystems',
