@@ -2,6 +2,13 @@ import { ReactNode } from 'react';
 import { ImageProperty } from '../Common/index';
 import { SCMProperties } from '../SCMIcon';
 
+export interface NavbarMenuProperty {
+  css: string;
+  path?: string;
+  text: string;
+  items?: NavbarLinkProperty[];
+}
+
 export interface NavbarLinkProperty {
   path?: string;
   text: string;

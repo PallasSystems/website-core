@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { LinkContainer } from 'react-router-bootstrap';
 
-import { NavbarProperty, NavbarLinkProperty } from './BannerNavBar.types';
+import { NavbarProperty, NavbarLinkProperty, NavbarMenuProperty } from './BannerNavBar.types';
 import { GenerateBrandLogo, GenerateHeaderClassName } from './BannerNavBar.utils';
 import { GenerateGitBrowseURL, SCMIcon } from '../SCMIcon';
 import { CaretDownFill } from 'react-bootstrap-icons';
@@ -58,15 +58,11 @@ const BannerNavBar: FC<NavbarProperty> = ({
               ) : null}
               {links.map((link: NavbarLinkProperty) => {
                 return (
-                  <LinkContainer key={'BannerNavBar.Link.' + link.text} to={link.path}>
-                    <Nav.Link
-                      key={'BannerNavBar.Link.Text.' + link.text}
-                      id={'BannerNavBar.Link.Text.' + link.text}
-                      className={typeof suffixRow === 'function' ? '' : 'navbar_collapse_menu'}
-                    >
-                      {link.text}
-                    </Nav.Link>
-                  </LinkContainer>
+                  <BannerNavBarTopLevelMenu
+                    key={'BannerNavBar.Link.Text.' + link.text}
+                    css={'navbar_collapse_menu'}
+                    {...link}
+                  />
                 );
               })}
             </Nav>
@@ -80,7 +76,13 @@ const BannerNavBar: FC<NavbarProperty> = ({
           <Container fluid>
             <ul id='projectBar.navbar.list' className='navbar-nav navbar_suffix_menu'>
               {links.map((link: NavbarLinkProperty) => {
-                return <BannerNavBarMenuItems key={'SuffixNavBar.Link.Text.' + link.text} {...link} />;
+                return (
+                  <BannerNavBarTopLevelMenu
+                    key={'SuffixNavBar.Link.Text.' + link.text}
+                    css={'navbar_suffix_menu'}
+                    {...link}
+                  />
+                );
               })}
             </ul>
           </Container>
@@ -90,46 +92,66 @@ const BannerNavBar: FC<NavbarProperty> = ({
   );
 };
 
-const BannerNavBarMenuItems: FC<NavbarLinkProperty> = ({ text, path, items }) => {
+const BannerNavBarTopLevelMenu: FC<NavbarMenuProperty> = ({ css, text, path, items }) => {
   return (
-    <Nav.Item className={items && items.length > 0 ? 'dropdown' : ''}>
+    <li className={items && items.length > 0 ? 'nav-item dropdown' : 'nav-item'}>
       {items && items.length > 0 ? (
         <>
-          <Nav.Link id={'SuffixNavBar.Link.Text.' + text} role='button' data-bs-toggle='dropdown' aria-expanded='false'>
-            {text}
-            <CaretDownFill />
-          </Nav.Link>
-          <ul className='dropdown-menu' aria-labelledby={'SuffixNavBar.Link.Text.' + text}>
+          <LinkContainer key={'BannerNavBar.Link.' + text} to={path ? path : '#'}>
+            <a
+              id={css + '.NavBar.Link.Text.' + text}
+              className={css + ' nav-link'}
+              role='button'
+              data-bs-toggle='dropdown'
+              aria-expanded='false'
+            >
+              {text}
+              <CaretDownFill />
+            </a>
+          </LinkContainer>
+          <ul className='dropdown-menu submenu' aria-labelledby={css + '.NavBar.Link.Text.' + text}>
             {items.map((item: NavbarLinkProperty) => {
-              return <BannerNavBarSubMenuItem {...item} />;
+              return <BannerNavBarSubLevelMenu {...item} />;
             })}
           </ul>
         </>
       ) : (
-        <BannerNavBarMenuItem text={text} path={path} />
+        <LinkContainer key={'BannerNavBar.Link.' + text} to={path ? path : '#'}>
+          <a id={css + '.NavBar.Link.Text.' + text} className={css + ' nav-link'} role='button' aria-expanded='false'>
+            {text}
+          </a>
+        </LinkContainer>
       )}
-    </Nav.Item>
+    </li>
   );
 };
 
-const BannerNavBarSubMenuItem: FC<NavbarLinkProperty> = ({ text, path, items }) => {
+const BannerNavBarSubLevelMenu: FC<NavbarLinkProperty> = ({ text, path, items }) => {
   return (
-    <li className={items && items.length > 0 ? 'nav-item dropdown-item dropdown-submenu' : 'dropdown-item'}>
+    <li className={items && items.length > 0 ? 'nav-item dropdown-item dropdown-submenu' : 'nav-item'}>
       {items && items.length > 0 ? (
         <>
-          <a id={'SuffixNavBar.Link.Text.' + text} className={'nav-link dropdown-item'} title={text}>
-            {text}
-          </a>
-          <ul className='dropdown-menu submenu'>
+          <LinkContainer key={'BannerNavBar.Link.' + text} to={path ? path : '#'}>
+            <a
+              id={'NavBar.Link.Text.Sub.' + text}
+              className={'dropdown-item'}
+              role='button'
+              data-bs-toggle='dropdown'
+              aria-expanded='false'
+            >
+              {text}
+            </a>
+          </LinkContainer>
+          <ul className='dropdown-menu submenu' aria-labelledby={'NavBar.Link.Text.' + text}>
             {items.map((item: NavbarLinkProperty) => {
               return (
-                <li className='nav-item dropdown-item'>
-                  <LinkContainer key={'SuffixNavBar.Link.' + item.text} to={item.path ? item.path : '/unspecified'}>
+                <li className={items && items.length > 0 ? 'nav-item dropdown-item' : 'nav-item'}>
+                  <LinkContainer key={'BannerNavBar.Link.' + item.text} to={item.path ? item.path : '#'}>
                     <a
-                      id={'SuffixNavBar.Dropdown.Link.Text.' + item.text}
+                      id={'NavBar.Link.Text.Sub.' + item.text}
                       className={'dropdown-item'}
-                      href={item.path}
-                      title={item.text}
+                      role='button'
+                      aria-expanded='false'
                     >
                       {item.text}
                     </a>
@@ -140,17 +162,13 @@ const BannerNavBarSubMenuItem: FC<NavbarLinkProperty> = ({ text, path, items }) 
           </ul>
         </>
       ) : (
-        <BannerNavBarMenuItem text={text} path={path} />
+        <LinkContainer key={'BannerNavBar.Link.' + text} to={path ? path : '#'}>
+          <a id={'SuffixNavBar.Link.Text.' + text} className={'dropdown-item'} role='button' aria-expanded='false'>
+            {text}
+          </a>
+        </LinkContainer>
       )}
     </li>
-  );
-};
-
-const BannerNavBarMenuItem: FC<NavbarLinkProperty> = ({ text, path }) => {
-  return (
-    <LinkContainer key={'SuffixNavBar.Link.' + text} to={path ? path : '/unspecified'}>
-      <Nav.Link id={'SuffixNavBar.Link.Text.' + text}>{text}</Nav.Link>
-    </LinkContainer>
   );
 };
 
