@@ -34,26 +34,76 @@ img.content {
 }
 
 /*
- * Declare different heights because we have used
- * rem and that is a function of text height and
- * screen width changes the text height (and the
- * required height of the box).
- */
-@media only screen and (max-width: 540px) {
+ * content-specific
+ * -------------------------------------------------- */
+h1.display-4 {
+  color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+  ul.navbar_suffix_menu {
+    display: none;
+  }
   nav.navbar_suffix_menu {
     display: none;
   }
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 576px) {
   a.navbar_collapse_menu {
     display: none;
   }
 }
 
-/*
- * content-specific
- * -------------------------------------------------- */
-h1.display-4 {
-  color: #fff;
+p.home_btn {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0.75em;
+}
+
+p.home_muti_line_btn {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0.75em;
+}
+
+@media only screen and (max-width: 576px) {
+  p.home_muti_line_btn {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0em;
+  }
+}
+
+/* MSKINS-191 Added for submenu in responsive small screens */
+.dropdown-submenu {
+  position: relative;
+}
+/* MSKINS-191 Added for submenu in responsive small screens */
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+/* MSKINS-191 Added for submenu in responsive small screens */
+.navbar-nav li:hover > ul.submenu {
+  display: block;
+}
+
+/* MSKINS-191 Added for submenu in responsive small screens */
+@media all and (min-width: 992px) {
+  .dropdown-menu li {
+    position: relative;
+  }
+  .dropdown-menu .submenu {
+    display: none;
+    position: absolute;
+    right: 100%;
+    left: auto;
+  }
+  .dropdown-menu .submenu-left {
+    right: 100%;
+    top: -7px;
+  }
 }
