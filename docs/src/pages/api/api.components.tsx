@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { BannerNavBar, Footer } from '@pallassystems/website-core';
+import { PallasPageWrapper } from '@pallassystems/website-core';
 
 // Getting Started Page Properties
 import { ApiPageProperties } from './api.types';
@@ -9,9 +9,7 @@ import { ApiBannerNavBarPageData } from './BannerNavBar/BannerNavBar.data';
 
 const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   return (
-    <>
-    <BannerNavBar {...navBarProps} />
-    <main className={'flex-grow-1'} role={'main'}>
+    <PallasPageWrapper authenticated={true} footerProps={footerProps} navBarProps={navBarProps}>
       <Container id='intro'>
         <Row className={'my-2'}>
           <h1>API Reference</h1>
@@ -33,9 +31,7 @@ const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
           </ul>
         </Row>
       </Container>
-      </main>
-      <Footer {...footerProps} />
-    </>
+    </PallasPageWrapper>
   );
 };
 

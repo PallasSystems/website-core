@@ -12,6 +12,7 @@ export interface NavbarMenuProperty {
 export interface NavbarLinkProperty {
   path?: string;
   text: string;
+  id: string;
   items?: NavbarLinkProperty[];
 }
 

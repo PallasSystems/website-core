@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { BannerNavBar, Footer } from '@pallassystems/website-core';
+import { PallasPageWrapper } from '@pallassystems/website-core';
 
 // Getting Started Page Properties
 import { GettingStartedPageProperties } from './gettingStarted.types';
@@ -11,9 +11,7 @@ import { GettingStartedUsageComponent } from './gettingStarted.usage.components'
 
 const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, navBarProps }) => {
   return (
-    <>
-    <BannerNavBar {...navBarProps} />
-    <main className={'flex-grow-1'} role={'main'}>
+    <PallasPageWrapper authenticated={true} footerProps={footerProps} navBarProps={navBarProps}>
       <Container id='intro'>
         <Row className={'my-2'}>
           <GettingStartedInstallComponent />
@@ -22,9 +20,7 @@ const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, nav
           <GettingStartedUsageComponent />
         </Row>
       </Container>
-      </main>
-      <Footer {...footerProps} />
-    </>
+    </PallasPageWrapper>
   );
 };
 
