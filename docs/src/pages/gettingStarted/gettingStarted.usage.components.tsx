@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import Prism from 'prismjs';
 
-import { BannerNavBar, Footer } from '@pallassystems/website-core';
+import { PallasPageWrapper } from '@pallassystems/website-core';
 
 // Getting Started Page Properties
 import { GettingStartedPageProperties } from './gettingStarted.types';
@@ -47,13 +47,11 @@ const GettingStartedUsageComponent: FC = () => {
 
 const GettingStartedUsagePage: FC<GettingStartedPageProperties> = ({ footerProps, navBarProps }) => {
   return (
-    <main role={'main'} className={'flex-shrink-0'}>
-      <BannerNavBar {...navBarProps} />
+    <PallasPageWrapper authenticated={true} footerProps={footerProps} navBarProps={navBarProps}>
       <Container id='intro' className={'content'}>
         <GettingStartedUsageComponent />
       </Container>
-      <Footer {...footerProps} />
-    </main>
+    </PallasPageWrapper>
   );
 };
 

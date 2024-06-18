@@ -1,6 +1,18 @@
 import { PallasSVG } from '@pallassystems/website-core';
+import type { NavbarLinkProperty } from '@pallassystems/website-core';
 
-import { HomePageProperties } from './pages';
+import type { HomePageProperties } from './pages';
+
+export const ExamplePageData: NavbarLinkProperty[] = [
+  {
+    path: '/example/bannernavbar',
+    text: 'Banner NavBar Examples',
+    items: [
+      { path: '/example/bannernavbar/simple', id: 'bannernavbar--simple', text: 'Simple' },
+      { path: '/example/bannernavbar/complete', id: 'bannernavbar--complex', text: 'Complete' },
+    ],
+  },
+];
 
 export const PageData: HomePageProperties = {
   navBarProps: {
@@ -20,16 +32,7 @@ export const PageData: HomePageProperties = {
       {
         text: 'Examples',
         path: '/example',
-        items: [
-          {
-            path: '/example/bannernavbar',
-            text: 'Banner NavBar Examples',
-            items: [
-              { path: '/example/bannernavbar/simple', text: 'Simple' },
-              { path: '/example/bannernavbar/complete', text: 'Complete' },
-            ],
-          },
-        ],
+        items: ExamplePageData,
       },
     ],
     scm: {
