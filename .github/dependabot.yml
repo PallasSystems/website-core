@@ -13,8 +13,3 @@ updates:
     directory: "/docs/"
     schedule:
       interval: "monthly"
-groups:
-  production-dependencies:
-    dependency-type: "production"
-  development-dependencies:
-    dependency-type: "development"
