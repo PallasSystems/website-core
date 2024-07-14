@@ -21,7 +21,7 @@ export const ExamplesHeadPage: FC<ExamplesPageProps> = ({ footerProps, navBarPro
           <h1>Examples</h1>
         </Row>
         <Row>
-          <p>Some text goes here</p>
+          <p>This section provides a number of examples to help you quickly get started using the library.</p>
         </Row>
         {exampleProps.map((exampleProp: NavbarLinkProperty) => {
           return <ExamplesHeadTitlePage {...exampleProp} />;
