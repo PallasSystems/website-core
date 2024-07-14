@@ -38,7 +38,7 @@ export const SCMIcon: FC<SCMProperties> = ({ endpoint, project, repository, clas
   return (
     <>
       {url && url.length > 0 ? (
-        <p id={'SCMIcon.' + project + '.' + repository} className={linkClass}>
+        <p id={'SCMIcon.' + project + '.' + repository} className={linkClass} title='Project Source Code'>
           {GenerateSCMLink(url, imgFn, imgProps)}
         </p>
       ) : null}
