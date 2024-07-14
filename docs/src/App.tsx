@@ -29,7 +29,7 @@ function App() {
         {ApiBannerNavBarPageData.map((value) => {
           return <Route path={value.link} element={value.page(PageData)} />;
         })}
-        <Route path={'/example'} element={<ExamplesHeadPage {...PageData} exampleProps={ExamplePageData} />} />
+        <Route path={'/examples'} element={<ExamplesHeadPage {...PageData} exampleProps={ExamplePageData} />} />
         {ExamplePageData.map((value: NavbarLinkProperty) => {
           return <Route path={value.path} element={<ExamplesSectionPage exampleProps={value} {...PageData} />} />;
         })}
