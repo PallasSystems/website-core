@@ -128,10 +128,13 @@ const BannerNavBarTopLevelMenu: FC<NavbarMenuProperty> = ({ css, text, path, ite
 
 const BannerNavBarSubLevelMenu: FC<NavbarLinkProperty> = ({ text, path, items }) => {
   return (
-    <li className={items && items.length > 0 ? 'nav-item dropdown-submenu' : 'nav-item'}>
+    <>
       {items && items.length > 0 ? (
-        <>
-          <LinkContainer key={'BannerNavBar.Link.' + text} to={path ? path : ''}>
+        <li
+          className={items && items.length > 0 ? 'nav-item dropdown-submenu' : 'nav-item'}
+          key={'BannerNavBar.Link.' + text}
+        >
+          <LinkContainer to={path ? path : ''}>
             <a
               id={'NavBar.Link.Text.Sub.' + text}
               className={'dropdown-item'}
@@ -145,8 +148,11 @@ const BannerNavBarSubLevelMenu: FC<NavbarLinkProperty> = ({ text, path, items })
           <ul className='dropdown-menu submenu' aria-labelledby={'NavBar.Link.Text.' + text}>
             {items.map((item: NavbarLinkProperty) => {
               return (
-                <li className={items && items.length > 0 ? 'nav-item' : 'nav-item'}>
-                  <LinkContainer key={'BannerNavBar.Link.' + item.text} to={item.path ? item.path : ''}>
+                <li
+                  className={items && items.length > 0 ? 'nav-item' : 'nav-item'}
+                  key={'BannerNavBar.Link.' + item.text}
+                >
+                  <LinkContainer to={item.path ? item.path : ''}>
                     <a
                       id={'NavBar.Link.Text.Sub.' + item.text}
                       className={'dropdown-item'}
@@ -160,7 +166,7 @@ const BannerNavBarSubLevelMenu: FC<NavbarLinkProperty> = ({ text, path, items })
               );
             })}
           </ul>
-        </>
+        </li>
       ) : (
         <LinkContainer key={'BannerNavBar.Link.' + text} to={path ? path : ''}>
           <a id={'SuffixNavBar.Link.Text.' + text} className={'dropdown-item'} role='button' aria-expanded='false'>
@@ -168,7 +174,7 @@ const BannerNavBarSubLevelMenu: FC<NavbarLinkProperty> = ({ text, path, items })
           </a>
         </LinkContainer>
       )}
-    </li>
+    </>
   );
 };
 

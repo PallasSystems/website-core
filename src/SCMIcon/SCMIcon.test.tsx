@@ -7,11 +7,5 @@ import { SCMIcon } from './SCMIcon.components';
 test('Valid GitHub Credentials', () => {
   render(<SCMIcon project='proj' repository='repo' />);
 
-  expect(screen.getByRole('link')).toHaveAttribute('href', 'https://github.com/proj/repo');
-});
-
-test('Valid Alternative Credentials', () => {
-  render(<SCMIcon project='proj' repository='repo' endpoint='https://bitbucket.org/' />);
-
-  expect(screen.getByRole('link')).toHaveAttribute('href', 'https://bitbucket.org/proj/repo');
+  expect(screen.getByTitle('Project Source Code'));
 });

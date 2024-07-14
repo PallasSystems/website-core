@@ -4,6 +4,8 @@ export type ExamplesPageProps = {
   footerProps?: FooterProperties;
   navBarProps?: NavbarProperty;
   exampleProps: NavbarLinkProperty[];
+  headerText?: String;
+  headerMessage?: String;
 };
 
 export type ExamplesSubPageProps = {

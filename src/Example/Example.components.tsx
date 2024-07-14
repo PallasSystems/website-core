@@ -13,18 +13,29 @@ import { PallasPageWrapper } from '../PallasPageWrapper/PallasPageWrapper.compon
  * @param param0
  * @returns
  */
-export const ExamplesHeadPage: FC<ExamplesPageProps> = ({ footerProps, navBarProps, exampleProps }) => {
+export const ExamplesHeadPage: FC<ExamplesPageProps> = ({
+  footerProps,
+  navBarProps,
+  exampleProps,
+  headerText,
+  headerMessage,
+}) => {
+  const header = headerText ? headerText : 'Examples';
+  const message = headerMessage
+    ? headerMessage
+    : 'This section provides a number of examples to help you quickly get started using the library.';
+
   return (
     <PallasPageWrapper authenticated={true} footerProps={footerProps} navBarProps={navBarProps}>
       <Container id='intro' className={'my-2'}>
         <Row>
-          <h1>Examples</h1>
+          <h1>{header}</h1>
         </Row>
         <Row>
-          <p>Some text goes here</p>
+          <p>{message}</p>
         </Row>
         {exampleProps.map((exampleProp: NavbarLinkProperty) => {
-          return <ExamplesHeadTitlePage {...exampleProp} />;
+          return <ExamplesHeadTitlePage key={exampleProp.id} {...exampleProp} />;
         })}
       </Container>
     </PallasPageWrapper>
@@ -56,24 +67,22 @@ export const ExamplesHeadTitlePage: FC<NavbarLinkProperty> = ({ text, items }) =
     <>
       {items ? (
         <>
-          <Row className={'mx-3'}>
+          <Row>
             <h2>{text}</h2>
           </Row>
           <Row className={'mx-3'}>
             <ul>
               {items.map((item) => {
                 return (
-                  <>
+                  <li key={'Example.Head.List.' + item.text}>
                     {item.path ? (
-                      <li>
-                        <LinkContainer to={item.path}>
-                          <a>{item.text}</a>
-                        </LinkContainer>
-                      </li>
+                      <LinkContainer to={item.path} key={'Example.Head.Lis.Link.' + item.text}>
+                        <a>{item.text}</a>
+                      </LinkContainer>
                     ) : (
-                      <p>test</p>
+                      <p>{item.text}</p>
                     )}
-                  </>
+                  </li>
                 );
               })}
             </ul>
