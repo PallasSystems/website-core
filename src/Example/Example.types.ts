@@ -1,8 +1,6 @@
-import { FooterProperties, NavbarLinkProperty, NavbarProperty } from '../';
+import { FooterProperties, NavbarLinkProperty, NavbarProperty, PallasPageWrapperProperties } from '../';
 
-export type ExamplesPageProps = {
-  footerProps?: FooterProperties;
-  navBarProps?: NavbarProperty;
+export type ExamplesPageProps = PallasPageWrapperProperties & {
   exampleProps: NavbarLinkProperty[];
   headerText?: String;
   headerMessage?: String;
