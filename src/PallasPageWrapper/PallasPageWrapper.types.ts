@@ -1,16 +1,9 @@
 import React, { ReactNode } from 'react';
-import { UserManager } from 'oidc-client-ts';
 
-import type { FooterProperties, NavbarProperty } from '../';
-
-export type LoginConfiguration = {
-  authenticated?: boolean;
-  setAuthenticated?: (arg: boolean) => void;
-  userManager?: UserManager;
-};
+import type { AuthenticationConfiguration, FooterProperties, NavbarProperty } from '../';
 
 export type PallasPageWrapperProperties = React.HTMLAttributes<HTMLDivElement> &
-  LoginConfiguration & {
+  AuthenticationConfiguration & {
     footerProps?: FooterProperties;
     navBarProps?: NavbarProperty;
     children?: ReactNode;

@@ -19,6 +19,7 @@ export const ExamplesHeadPage: FC<ExamplesPageProps> = ({
   exampleProps,
   headerText,
   headerMessage,
+  homePathName,
 }) => {
   const header = headerText ? headerText : 'Examples';
   const message = headerMessage
@@ -26,7 +27,12 @@ export const ExamplesHeadPage: FC<ExamplesPageProps> = ({
     : 'This section provides a number of examples to help you quickly get started using the library.';
 
   return (
-    <PallasPageWrapper authenticated={true} footerProps={footerProps} navBarProps={navBarProps}>
+    <PallasPageWrapper
+      authenticated={true}
+      footerProps={footerProps}
+      homePathName={homePathName}
+      navBarProps={navBarProps}
+    >
       <Container id='intro' className={'my-2'}>
         <Row>
           <h1>{header}</h1>
