@@ -46,6 +46,8 @@
     "node_modules",
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.stories.ts",
     "**/*.md",
     "**/rollup.config.js"
   ]
