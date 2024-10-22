@@ -8,8 +8,7 @@ const PallasPageWrapper: FC<PallasPageWrapperProperties> = ({
   authenticated,
   footerProps,
   navBarProps,
-  children,
-  homePathName,
+  children
 }) => {
   return (
     <Suspense fallback={<LoadingSpinner />}>
