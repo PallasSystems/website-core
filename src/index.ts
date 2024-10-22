@@ -22,4 +22,6 @@ export { SCMIcon } from './SCMIcon/index';
 export type { SCMProperties } from './SCMIcon/index';
 
 export { PallasPageWrapper } from './PallasPageWrapper';
-export type { PallasPageWrapperProperties, LoginConfiguration } from './PallasPageWrapper';
+export type { PallasPageWrapperProperties } from './PallasPageWrapper';
+
+export type { AuthenticationConfiguration } from './Authentication';

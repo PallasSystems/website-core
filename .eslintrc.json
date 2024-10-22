@@ -5,10 +5,18 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
   "overrides": [
     {
-      "files": ["**/*.stories.*"],
+      "files": [
+        "**/*.stories.*"
+      ],
       "rules": {
         "import/no-anonymous-default-export": "off"
       }
@@ -21,7 +29,12 @@
       "jsx": true
     }
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
     "@typescript-eslint/no-non-null-assertion": "warn"
   },
