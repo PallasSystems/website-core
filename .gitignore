@@ -42,3 +42,4 @@ junit.xml
 
 #MKDocs
 site/
+*storybook.log
