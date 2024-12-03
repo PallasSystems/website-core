@@ -2,6 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import { TextEncoder, TextDecoder } from 'util';
+Object.assign(global, { TextDecoder, TextEncoder });
+
 import { BannerNavBar } from './BannerNavBar.components';
 
 test('Blank Social Media Credentials', () => {
