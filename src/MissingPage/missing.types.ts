@@ -1,8 +1,6 @@
-import { FooterProperties, NavbarProperty } from '@pallassystems/website-core';
+import { FooterProperties, NavbarProperty } from '../';
 
-type MissingPageProperties = {
+export type MissingPageProperties = {
   footerProps?: FooterProperties;
   navBarProps?: NavbarProperty;
 };
-
-export type { MissingPageProperties };

@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { Col, Container, Row } from 'react-bootstrap';
 
-import { MissingPageProperties } from './missing.types.js';
+import type { MissingPageProperties } from './missing.types';
 import { PallasPageWrapper, PallasSVG } from '../';
 
 const MissingPage: FC<MissingPageProperties> = ({ footerProps, navBarProps }) => {
