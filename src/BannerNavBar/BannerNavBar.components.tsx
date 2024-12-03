@@ -111,7 +111,7 @@ const BannerNavBarTopLevelMenu: FC<NavbarMenuProperty> = ({ css, text, path, ite
           </LinkContainer>
           <ul className='dropdown-menu submenu' aria-labelledby={css + '.NavBar.Link.Text.' + text}>
             {items.map((item: NavbarLinkProperty) => {
-              return <BannerNavBarSubLevelMenu {...item} />;
+              return <BannerNavBarSubLevelMenu key={css + '.NavBar.Link.Text.' + text} {...item} />;
             })}
           </ul>
         </>

@@ -13,7 +13,7 @@ describe('IsGitHubRepository', () => {
 
   test('not gitbuh', () => {
     expect(IsGitHubRepository('https://gitlab.com/pallassystems/website-core')).toBeFalsy();
-    expect(IsGitHubRepository('ssh://bitbucket.company.com/example/bob.git')).toBeFalsy;
+    expect(IsGitHubRepository('ssh://bitbucket.company.com/example/bob.git')).toBeFalsy();
   });
 });
 

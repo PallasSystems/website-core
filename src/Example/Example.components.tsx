@@ -4,7 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import { ExamplesPageProps, ExamplesStorybookPageProps, ExamplesSubPageProps } from './Example.types';
-import { BannerNavBar, Footer, NavbarLinkProperty } from '..';
+import { NavbarLinkProperty } from '..';
 
 import { PallasPageWrapper } from '../PallasPageWrapper/PallasPageWrapper.components';
 
