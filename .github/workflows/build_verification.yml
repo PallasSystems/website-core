@@ -1,4 +1,4 @@
-name: Build Verification of Node.JS project
+name: Check Node.JS version support
 
 on:
   push:
