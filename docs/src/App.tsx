@@ -2,10 +2,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import type { NavbarLinkProperty } from '@pallassystems/website-core';
 
-import { 
-    ExamplesHeadPage, 
-    ExamplesSectionPage, 
-    ExamplesStorybookPage } from '@pallassystems/website-core';
+import { ExamplesHeadPage, ExamplesSectionPage, ExamplesStorybookPage } from '@pallassystems/website-core';
 
 import {
   ApiBannerNavBarPageData,
@@ -33,7 +30,7 @@ function App() {
         {ApiBannerNavBarPageData.map((value) => {
           return <Route path={value.link} element={value.page(PageData)} />;
         })}
-        <Route path={'/examples'} element={<ExamplesHeadPage {...PageData} exampleProps={ExamplePageData} />} />
+        <Route path={'/example'} element={<ExamplesHeadPage {...PageData} exampleProps={ExamplePageData} />} />
         {ExamplePageData.map((value: NavbarLinkProperty) => {
           return <Route path={value.path} element={<ExamplesSectionPage exampleProps={value} {...PageData} />} />;
         })}
