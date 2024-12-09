@@ -1,4 +1,4 @@
-name: Build Verification of Node.JS project
+name: Build Verification for docs of the Node.JS project
 
 on:
   create:
