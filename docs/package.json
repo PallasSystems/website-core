@@ -27,6 +27,12 @@
     "react-router": ">=7.0.1"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^8.4.6",
+    "@storybook/addon-essentials": "^8.4.6",
+    "@storybook/addon-interactions": ">=8.4.6",
+    "@storybook/addon-links": "^8.4.6",
+    "@storybook/addon-onboarding": "^8.4.6",
+    "@storybook/blocks": "^8.4.6",
     "@storybook/builder-vite": "^8.4.6",
     "@storybook/react-vite": "^8.4.6",
     "@types/prismjs": "^1.26.4",
