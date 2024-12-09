@@ -9,5 +9,5 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_build_verification.yml@main
+    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_check_version_support.yml@main
     secrets: inherit

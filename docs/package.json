@@ -6,13 +6,16 @@
   "homepage": "https://pallassystems.github.io/website-core/",
   "license": "UNLICENSED",
   "scripts": {
-    "clean": "rm -rf ./dist ./coverage ./public/storybook-static eslint_report.json stylelint_report.json junit.xml",
-    "dev": "npm run clean && npm run build:storybook && vite",
     "build": "npm run clean && npm run build:storybook && vite build",
     "build:storybook": "storybook build -o ./public/storybook-static",
+    "clean": "rm -rf ./dist ./coverage ./public/storybook-static eslint_report.json stylelint_report.json junit.xml",
+    "dev": "npm run clean && npm run build:storybook && vite",
+    "eslint": "eslint --config ../eslint.config.mjs --output-file eslint_report.json --format json src/",
+    "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
+    "lint": "npm run eslint && npm run stylelint",
+    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "test": "jest"
   },
   "dependencies": {
     "@pallassystems/react-bootstrap-table": "^0.7.7",
@@ -30,6 +33,8 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "stylelint": ">=15.7.0",
+    "stylelint-config-standard": ">=33.0.0",
     "typescript": "^5.7.2",
     "vite": "^5.0.0"
   }
