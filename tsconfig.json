@@ -9,7 +9,7 @@
     "jsx": "react-jsx",
     "importHelpers": true,
     "isolatedModules": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ES6", "DOM"],
     "module": "CommonJS",
     "moduleResolution": "Node",
     "noFallthroughCasesInSwitch": true,
@@ -21,7 +21,7 @@
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": false,
-    "target": "ESNext",
+    "target": "ES6",
     "plugins": [
       {
         "name": "typescript-styled-plugin",
