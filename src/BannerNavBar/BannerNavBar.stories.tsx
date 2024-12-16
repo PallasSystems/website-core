@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { Meta, ReactRenderer, StoryFn } from '@storybook/react';
 
 import { BannerNavBar } from './BannerNavBar.components';
@@ -13,13 +13,13 @@ const meta: Meta<typeof BannerNavBar> = {
   //👇 Enables auto-generated documentation for the component story
   decorators: [
     (Story) => (
-      <HashRouter>
+      <MemoryRouter>
         <Routes>
           <Route path={''} element={<Story />} />
           <Route path={'/services'} element={<Story />} />
           <Route path={'/team'} element={<Story />} />
         </Routes>
-      </HashRouter>
+      </MemoryRouter>
     ),
   ],
 };
@@ -45,9 +45,9 @@ Basic.args = {
     name: 'Pallas Systems',
   },
   items: [
-    { text: 'Menu 1', path: '' },
-    { text: 'Menu 2', path: '/services' },
-    { text: 'Menu 3', path: '/team' },
+    { id:'menu1NavBar', text: 'Menu 1', path: '' },
+    { id:'menu2NavBar', text: 'Menu 2', path: '/services' },
+    { id:'menu3NavBar', text: 'Menu 3', path: '/team' },
   ],
 };
 
@@ -66,9 +66,9 @@ Complete.args = {
     ),
   },
   items: [
-    { text: 'Home', path: '' },
-    { text: 'Services', path: '/services' },
-    { text: 'Team', path: '/team' },
+    { id:'homeNavbar', text: 'Home', path: '' },
+    { id:'servicesNavbar', text: 'Services', path: '/services' },
+    { id:'teamNavbar', text: 'Team', path: '/team' },
   ],
   scm: {
     project: 'test',
@@ -97,14 +97,15 @@ SubMenus.args = {
     ),
   },
   items: [
-    { text: 'Home', path: '' },
-    { text: 'Services', path: '/services' },
+    { id:'homeNavBar', text: 'Home', path: '' },
+    { id:'servicesNavBar', text: 'Services', path: '/services' },
     {
+      id:'teamNavBar', 
       path: '/team',
       text: 'Team',
       items: [
-        { text: 'Joe Bloggs', path: '/team/jbloggs' },
-        { text: 'John Doe', path: '/team/jdoe', items: [{ text: 'Jane', path: '/team/jane' }] },
+        { id:'joeSubNavBar', text: 'Joe Bloggs', path: '/team/jbloggs' },
+        { id:'johnSubNavBar', text: 'John Doe', path: '/team/jdoe', items: [{ id:'janeSubSubNavBar', text: 'Jane', path: '/team/jane' }] },
       ],
     },
   ],
@@ -135,9 +136,9 @@ PrefixRow.args = {
     ),
   },
   items: [
-    { text: 'Getting Started', path: '' },
-    { text: 'User Guide', path: '/services' },
-    { text: 'Flying Wing', path: '/team' },
+    { id:'gettingStartedNavBar', text: 'Getting Started', path: '' },
+    { id:'servicesNavBar', text: 'User Guide', path: '/services' },
+    { id:'teamNavBar', text: 'Flying Wing', path: '/team' },
   ],
   prefixRow: () => {
     return <h2>hello</h2>;
@@ -150,9 +151,9 @@ SpacedWords.args = {
     name: 'Pallas Systems',
   },
   items: [
-    { text: 'Getting Started', path: '' },
-    { text: 'User Guide', path: '/services' },
-    { text: 'Flying Wing', path: '/team' },
+    { id:'gettingStartedNavBar', text: 'Getting Started', path: '' },
+    { id:'servicesNavBar', text: 'User Guide', path: '/services' },
+    { id:'teamNavBar', text: 'Flying Wing', path: '/team' },
   ],
 };
 
@@ -162,8 +163,8 @@ LongWords.args = {
     name: 'Pallas Systems',
   },
   items: [
-    { text: 'GettingStartedWithTomAndDick', path: '' },
-    { text: 'User', path: '/services' },
-    { text: 'Supercalifragilisticexpialidocious', path: '/services' },
+    { id:'gsNavBar', text: 'GettingStartedWithTomAndDick', path: '' },
+    { id:'servicesNavBar', text: 'User', path: '/services' },
+    { id:'teamsNavBar', text: 'Supercalifragilisticexpialidocious', path: '/teams' },
   ],
 };
