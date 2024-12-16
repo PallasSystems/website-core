@@ -6,7 +6,7 @@
   "homepage": "https://pallassystems.github.io/website-core/",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npm run clean && npm run build:storybook && vite build",
+    "build": "npm run clean && vite build && npm run build:storybook",
     "build:storybook": "storybook build -o ./public/storybook-static",
     "clean": "rm -rf ./dist ./coverage ./public/storybook-static eslint_report.json stylelint_report.json junit.xml",
     "dev": "npm run clean && npm run build:storybook && vite",
