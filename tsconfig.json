@@ -22,8 +22,6 @@
     "strict": true,
     "strictFunctionTypes": false,
     "target": "ESNext",
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["react", "react-dom", "jest"],
     "plugins": [
       {
         "name": "typescript-styled-plugin",
