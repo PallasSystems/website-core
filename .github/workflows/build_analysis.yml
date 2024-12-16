@@ -12,5 +12,5 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_build_analysis.yml@main
+    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs/nodejs_npm_build_analysis.yml@main
     secrets: inherit

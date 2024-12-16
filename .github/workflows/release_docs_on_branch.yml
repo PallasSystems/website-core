@@ -8,5 +8,5 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_docs_release_on_branch.yml@main
+    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs/nodejs_npm_docs_release_on_branch.yml@main
     secrets: inherit
