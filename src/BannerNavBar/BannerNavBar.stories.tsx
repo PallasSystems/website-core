@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { Meta, ReactRenderer, StoryFn } from '@storybook/react';
 
 import { BannerNavBar } from './BannerNavBar.components';
-import { PallasSVG } from '../Common';
+import { ImageProperty, PallasSVG } from '../Common';
 import { AnnotatedStoryFn } from '@storybook/csf';
 import { NavbarProperty } from './BannerNavBar.types';
 
@@ -55,15 +55,14 @@ export const Complete: AnnotatedStoryFn<ReactRenderer, NavbarProperty> = Templat
 Complete.args = {
   brand: {
     name: 'Pallas Systems',
-    imgFn: (
+    imgFn: (props?: ImageProperty) => 
       <PallasSVG
         id='BannerNavBar.Brand.Link.Logo.SVG'
         alt='Pallas Systems Logo'
-        height='3.5rem'
+        height={props?.height ? props?.height : '3.5rem'}
         width='4rem'
         className='d-inline-block'
-      />
-    ),
+    />
   },
   items: [
     { id:'homeNavbar', text: 'Home', path: '' },
@@ -86,15 +85,14 @@ export const SubMenus: AnnotatedStoryFn<ReactRenderer, NavbarProperty> = Templat
 SubMenus.args = {
   brand: {
     name: 'Pallas Systems',
-    imgFn: (
+    imgFn: (props?: ImageProperty) => 
       <PallasSVG
         id='BannerNavBar.Brand.Link.Logo.SVG'
         alt='Pallas Systems Logo'
-        height='3.5rem'
+        height={props?.height ? props?.height : '3.5rem'}
         width='4rem'
         className='d-inline-block'
       />
-    ),
   },
   items: [
     { id:'homeNavBar', text: 'Home', path: '' },
@@ -125,15 +123,14 @@ export const PrefixRow: AnnotatedStoryFn<ReactRenderer, NavbarProperty> = Templa
 PrefixRow.args = {
   brand: {
     name: 'Pallas Systems',
-    imgFn: (
+    imgFn: (props?: ImageProperty) => 
       <PallasSVG
         id='BannerNavBar.Brand.Link.Logo.SVG'
         alt='Pallas Systems Logo'
-        height='3.5rem'
+        height={props?.height ? props?.height : '3.5rem'}
         width='4rem'
         className='d-inline-block'
       />
-    ),
   },
   items: [
     { id:'gettingStartedNavBar', text: 'Getting Started', path: '' },

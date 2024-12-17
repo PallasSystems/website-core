@@ -69,13 +69,11 @@ export const Default = Template.bind({});
 Default.args = {
   project: 'PallasSystems',
   repository: 'react-common',
-  type: 'GitHub',
 };
 
 export const Complete = Template.bind({});
 Complete.args = {
   endpoint: 'https://localhost:8090/',
   project: 'test',
-  repository: 'repo',
-  type: 'Git',
+  repository: 'repo'
 };
