@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { Meta, ReactRenderer, StoryFn } from '@storybook/react';
