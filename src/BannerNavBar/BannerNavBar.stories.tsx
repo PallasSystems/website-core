@@ -8,7 +8,7 @@ import { ImageProperty, PallasSVG } from '../Common';
 import { AnnotatedStoryFn } from '@storybook/csf';
 import { NavbarProperty } from './BannerNavBar.types';
 
-const meta: Meta<typeof BannerNavBar> = {
+export default {
   component: BannerNavBar,
   //👇 Enables auto-generated documentation for the component story
   decorators: [
@@ -22,9 +22,7 @@ const meta: Meta<typeof BannerNavBar> = {
       </MemoryRouter>
     ),
   ],
-};
-
-export default meta;
+} as Meta<typeof BannerNavBar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof BannerNavBar> = (args) => <BannerNavBar {...args} />;

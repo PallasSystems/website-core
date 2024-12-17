@@ -7,8 +7,6 @@ import '../src/css/base.css';
 import '../src/css/bootstrap.solar.css';
 import '../src/css/bootstrap.pallas.css';
 
-
-
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
