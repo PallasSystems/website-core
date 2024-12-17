@@ -1,7 +1,6 @@
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import prettier from 'eslint-plugin-prettier';
 import { fixupPluginRules } from '@eslint/compat';
 import globals from 'globals';
 import tsParser from '@typescript-eslint/parser';
@@ -23,19 +22,16 @@ export default [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier',
   ),
   {
     plugins: {
       react,
       'react-hooks': fixupPluginRules(reactHooks),
       '@typescript-eslint': typescriptEslint,
-      prettier,
     },
 
     languageOptions: {
       globals: {
-        ...globals.browser,
         ...globals.commonjs,
         ...globals.jest,
       },
