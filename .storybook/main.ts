@@ -9,9 +9,6 @@ const config: StorybookConfig = {
     '@chromatic-com/storybook',
     '@storybook/addon-interactions'
   ],
-  framework: {
-    name: '@storybook/react-webpack5',
-    options: {},
-  },
+  framework: '@storybook/react-webpack5',
 };
 export default config;
