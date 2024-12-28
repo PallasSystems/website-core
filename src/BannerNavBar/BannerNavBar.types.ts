@@ -1,4 +1,4 @@
-import { JSXElementConstructor, ReactElement, ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { ImageProperty } from '../Common/index';
 import { SCMProperties } from '../SCMIcon';
 
