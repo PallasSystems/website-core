@@ -1,8 +1,8 @@
-export const IsGitHubRepository = (url: string) => {
+export const IsGitHubRepository = (url: string): boolean => {
   return url.indexOf('github') > -1;
 };
 
-export const GenerateGitBrowseURL = (repository: string, project: string, endpoint?: string) => {
+export const GenerateGitBrowseURL = (repository: string, project: string, endpoint?: string): string | undefined => {
   let result = undefined;
 
   if (repository && repository.length > 0) {
