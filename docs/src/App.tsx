@@ -29,14 +29,14 @@ function App() {
         <Route path={''} element={<HomePage {...PageData} />} />
         <Route path={'/api'} element={<ApiHeadPage {...PageData} />} />
         {ApiBannerNavBarPageData.map((value) => {
-          return <Route path={value.link} element={value.page(PageData)} />;
+          return <Route key={value.link} path={value.link} element={value.page(PageData)} />;
         })}
         <Route path={'/example'} element={<ExamplesHeadPage {...PageData} exampleProps={ExamplePageData} />} />
         {ExamplePageData.map((value: NavbarLinkProperty) => {
-          return <Route path={value.path} element={<ExamplesSectionPage exampleProps={value} {...PageData} />} />;
+          return <Route key={value.link} path={value.path} element={<ExamplesSectionPage exampleProps={value} {...PageData} />} />;
         })}
         {storybooks.map((value: NavbarLinkProperty) => {
-          return <Route path={value.path} element={<ExamplesStorybookPage exampleProps={value} {...PageData} />} />;
+          return <Route key={value.link} path={value.path} element={<ExamplesStorybookPage exampleProps={value} {...PageData} />} />;
         })}
         <Route path={'/gettingstarted'} element={<GettingStartedPage {...PageData} />} />
         <Route path={'/gettingstarted/install'} element={<GettingStartedInstallPage {...PageData} />} />
