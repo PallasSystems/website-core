@@ -21,7 +21,7 @@ const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
           <ul>
             {ApiBannerNavBarPageData.map((value) => {
               return (
-                <li>
+                <li key={value.link}>
                   <LinkContainer to={value.link}>
                     <a href={value.text}>{value.text}</a>
                   </LinkContainer>
