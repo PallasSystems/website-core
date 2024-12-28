@@ -1,11 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { SCMIcon } from './SCMIcon.components';
 
 test('Valid GitHub Credentials', () => {
-  render(<SCMIcon project='proj' repository='repo' />);
+  const result = render(<SCMIcon project='proj' repository='repo' />);
 
-  expect(screen.getByTitle('Project Source Code'));
+  expect(result.getByTitle('Project Source Code'));
 });
