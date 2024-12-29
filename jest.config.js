@@ -19,15 +19,14 @@ module.exports = {
   // collectCoverageFrom: undefined,
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}', 
-    '!src/**/*stories.{ts,tsx}',
-    '!src/**/*test.{ts,tsx}'
+    '!src/**/*{stories,test}.{ts,tsx}'
   ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: ['node_modules/', 'src/**/*{!(stories)}.{ts,tsx}'],
+  // coveragePathIgnorePatterns: ['node_modules/', 'src/**/*{stories,test}.{ts,tsx}'],
 
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: 'babel',
