@@ -149,7 +149,7 @@ const BannerNavBarSubLevelMenu: FC<NavbarLinkProperty> = ({ text, path, items })
             {items.map((item: NavbarLinkProperty) => {
               return (
                 <li
-                  className={items && items.length > 0 ? 'nav-item' : 'nav-item'}
+                  className={'nav-item'}
                   key={'BannerNavBar.Link.' + item.text}
                 >
                   <LinkContainer to={item.path ? item.path : ''}>
