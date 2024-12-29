@@ -21,5 +21,8 @@ export type { SocialMediaProperties } from './SocialMediaSection/index';
 export { SCMIcon } from './SCMIcon/index';
 export type { SCMProperties } from './SCMIcon/index';
 
+export { MissingPage } from './MissingPage';
+export type { MissingPageProperties } from './MissingPage';
+
 export { PallasPageWrapper } from './PallasPageWrapper';
 export type { PallasPageWrapperProperties, LoginConfiguration } from './PallasPageWrapper';
