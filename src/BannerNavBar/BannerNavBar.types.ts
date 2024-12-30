@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { ImageProperty } from '../Common/index';
 import { SCMProperties } from '../SCMIcon';
 
