@@ -33,6 +33,6 @@ export interface NavbarProperty {
 
 export interface NavbarBrand {
   name: string;
-  imgFn?: FC<ImageProperty>;
+  imgFn?: (props?: ImageProperty) => ReactNode;
   imgProps?: ImageProperty;
 }
