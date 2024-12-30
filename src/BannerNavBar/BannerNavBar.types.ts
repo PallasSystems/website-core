@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import { ImageProperty } from '../Common/index';
 import { SCMProperties } from '../SCMIcon';
 
@@ -33,6 +33,6 @@ export interface NavbarProperty {
 
 export interface NavbarBrand {
   name: string;
-  imgFn?: (props?: ImageProperty) => ReactElement<ImageProperty>;
+  imgFn?: FC<ImageProperty>;
   imgProps?: ImageProperty;
 }
