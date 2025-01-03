@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router';
 import { Meta, ReactRenderer, StoryFn } from '@storybook/react';
 
 import { BannerNavBar } from './BannerNavBar.components';

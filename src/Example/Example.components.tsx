@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { Container, Row } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router';
 
 import { ExamplesPageProps, ExamplesStorybookPageProps, ExamplesSubPageProps } from './Example.types';
 import { NavbarLinkProperty } from '..';
@@ -76,9 +76,9 @@ export const ExamplesHeadTitlePage: FC<NavbarLinkProperty> = ({ text, items }) =
                 return (
                   <li key={'Example.Head.List.' + item.text}>
                     {item.path ? (
-                      <LinkContainer to={item.path} key={'Example.Head.Lis.Link.' + item.text}>
+                      <Link to={item.path} key={'Example.Head.Lis.Link.' + item.text}>
                         <a>{item.text}</a>
-                      </LinkContainer>
+                      </Link>
                     ) : (
                       <p>{item.text}</p>
                     )}

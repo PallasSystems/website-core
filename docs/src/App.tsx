@@ -1,8 +1,7 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router';
 
 import type { NavbarLinkProperty } from '@pallassystems/website-core';
-
 import { ExamplesHeadPage, ExamplesSectionPage, ExamplesStorybookPage } from '@pallassystems/website-core';
 
 import {

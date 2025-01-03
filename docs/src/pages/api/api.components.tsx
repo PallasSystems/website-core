@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router';
 import { PallasPageWrapper } from '@pallassystems/website-core';
 
 // Getting Started Page Properties
@@ -22,9 +22,9 @@ const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
             {ApiBannerNavBarPageData.map((value) => {
               return (
                 <li key={value.link}>
-                  <LinkContainer to={value.link}>
+                  <Link to={value.link}>
                     <a href={value.text}>{value.text}</a>
-                  </LinkContainer>
+                  </Link>
                 </li>
               );
             })}

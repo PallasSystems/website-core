@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 
 import { PallasPageWrapper } from '@pallassystems/website-core';
 
 // HomePage Properties
 import { HomePageProperties } from './home.types';
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+
 // Package properties
 import projectProps from '../../../../package.json';
 
@@ -22,23 +23,23 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
         <Row>
           <Col>
             <div className={'d-grid gap-2 my-2'}>
-              <LinkContainer to='/gettingStarted'>
+              <Link to='/gettingStarted'>
                 <Button variant='dark'>Getting Started</Button>
-              </LinkContainer>
+              </Link>
             </div>
           </Col>
           <Col>
             <div className={'d-grid gap-2 my-2'}>
-              <LinkContainer to='/api'>
+              <Link to='/api'>
                 <Button variant='dark'>API</Button>
-              </LinkContainer>
+              </Link>
             </div>
           </Col>
           <Col>
             <div className={'d-grid gap-2 my-2'}>
-              <LinkContainer to='/examples'>
+              <Link to='/examples'>
                 <Button variant='dark'>Examples</Button>
-              </LinkContainer>
+              </Link>
             </div>
           </Col>
         </Row>
